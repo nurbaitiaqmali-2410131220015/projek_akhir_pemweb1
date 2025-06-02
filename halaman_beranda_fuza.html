@@ -36,5 +36,32 @@
             <button onclick="setUsername()" style="background-color:white; color:#2e4fff; padding:5px 15px; border:none; border-radius:20px; font-weight:bold;">Oke</button>
         </div>
     </div>
+
+    <script>
+        const usernameDisplay = document.querySelector('.Username');
+        const usernameModal = document.getElementById('usernameModal');
+        const inputUsername = document.getElementById('inputUsername');
+
+        usernameDisplay.addEventListener('click', function () {
+            usernameModal.style.display = 'flex';
+        });
+
+        function setUsername() {
+            const name = inputUsername.value.trim();
+            if (name) {
+                usernameDisplay.textContent = name;
+                usernameModal.style.display = 'none';
+            } else {
+                alert('Nama pengguna tidak boleh kosong!');
+            }
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                usernameModal.style.display = 'none';
+            }
+        });
+    </script>
+
 </body>
 </html>
