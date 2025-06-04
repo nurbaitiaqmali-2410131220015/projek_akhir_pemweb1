@@ -236,4 +236,25 @@
         </p>
     </section>
 
-    
+    <div class="button-container">
+        <button class="nav-button" id="nextBtn">Next Materi Selanjutnya</button>
+        <button class="nav-button" id="soalBtn">Lanjut ke Halaman Soal</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('nextBtn').addEventListener('click', () => {
+                window.location.href = 'lanjutan_bab4.html';
+            });
+
+            document.getElementById('soalBtn').addEventListener('click', () => {
+                window.location.href = 'soal_bab4.html';
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
