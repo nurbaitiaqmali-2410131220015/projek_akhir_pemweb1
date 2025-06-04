@@ -209,3 +209,78 @@
         }
     </style>
 </head>
+<body>
+
+    <header>
+        <span class="top-left">Belajar Yuk</span>
+        <div class="top-right">
+            <img src="gambar.siswi.png" alt="icon" class="avatar-small" />
+            <span class="Username">Halo, Siswa!</span>
+        </div>
+    </header>
+
+    <div class="star" style="top: 100px; left: 50px;"></div>
+    <div class="star" style="top: 200px; left: 300px;"></div>
+    <div class="star" style="top: 400px; left: 70%;"></div>
+    <div class="star" style="top: 150px; left: 80%;"></div>
+    <div class="star" style="top: 350px; left: 20%;"></div>
+
+    <main>
+        <div class="flex-container" style="position: relative;">
+            <img src="buku.png" class="icon-image buku-icon" alt="Buku" width="150px">
+            <img src="gambarLampu.png" class="icon-image lampu-icon" alt="Lampu" width="150px">
+            <img src="laptop.png" class="icon-image laptop-icon" alt="Laptop" width="150px">
+
+            <img src="gambar.siswi.png" alt="karakter" class="character">
+
+            <div class="text-content">
+                <h1>Ayo Belajar</h1>
+                <h2>Informatika</h2>
+                <p>Seru, Interaktif, dan Mudah!</p>
+                <button onclick="startLearning()" class="btn btn-start">Mulai Belajar</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="usernameModal">
+        <div>
+            <h5>Nama Pengguna :</h5>
+            <input type="text" id="inputUsername" placeholder="Username" />
+            <br />
+            <button onclick="setUsername()">Oke</button>
+        </div>
+    </div>
+
+     <script>
+        const usernameDisplay = document.querySelector('.Username');
+        const usernameModal = document.getElementById('usernameModal');
+        const inputUsername = document.getElementById('inputUsername');
+
+        usernameDisplay.addEventListener('click', function () {
+            usernameModal.style.display = 'flex';
+        });
+
+        function setUsername() {
+            const name = inputUsername.value.trim();
+            if (name) {
+                usernameDisplay.textContent = name;
+                usernameModal.style.display = 'none';
+            } else {
+                alert('Nama pengguna tidak boleh kosong!');
+            }
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                usernameModal.style.display = 'none';
+            }
+        });
+
+        function startLearning() {
+            alert("Fitur mulai belajar belum diimplementasikan.");
+        }
+
+    </script>
+</body>
+
+</html>
