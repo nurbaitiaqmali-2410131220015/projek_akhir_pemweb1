@@ -8,5 +8,160 @@
             "D." : "Joystick"
         },
         "jawaban" : "C"
+    },
+
+    {
+        "soal" : "2. Fungsi utama dari keyboard adalah …",
+        "pilihan" :{
+            "A." :"Merekam Suara",
+            "B." :"Menampilkan Gambar",
+            "C." :"Memindai Dokumen",
+            "D." :"Mengetik teks dan simbol"
+        },
+        "jawaban" :"D"
+    },
+
+    {
+        "soal" : "3. Alat input yang digunakan untuk mengubah suara menjadi sinyal elektrik adalah …",
+        "pilihan" :{
+            "A." :"Speaker",
+            "B." :"Monitor",
+            "C." :"Microphone",
+            "D." :"Scanner"
+        },
+        "jawaban" :"C"
+    },
+
+     {
+        "soal" : "4. Fungsi joystick dalam komputer adalah untuk …",
+        "pilihan" :{
+            "A." :"Mencetak dokumen",
+            "B." :"Mengontrol permainan",
+            "C." :"Menyimpan data",
+            "D." :"Mengetik huruf"
+        },
+        "jawaban" :"B"
+    },
+
+    {
+        "soal" : "5. RAM berfungsi untuk …",
+        "pilihan" :{
+            "A." :"Menyimpan data secara permanen",
+            "B." :"Menyimpan data sementara saat komputer bekerja",
+            "C." :"Menyinpan suara",
+            "D." :"menampilkan data"
+        },
+        "jawaban" :"B"
+    },
+
+    {
+        "soal" : "6. Komponen utama CPU yang mengatur jalannya instruksi adalah …",
+        "pilihan" :{
+            "A." :"RAM",
+            "B." :"Register",
+            "C." :"Control Unit (CU)",
+            "D." :"ALU"
+        },
+        "jawaban" :"C"
+    },
+
+     {
+        "soal" : "7. Komponen CPU yang bertugas melakukan perhitungan logika dan aritmatika adalah …",
+        "pilihan" :{
+            "A." :"ROM",
+            "B." :"Register",
+            "C." :"Control Unit (CU)",
+            "D." :"ALU"
+        },
+        "jawaban" :"D"
+    },
+
+     {
+        "soal" : "8. Alat penyimpanan kecil yang sering digunakan di smartphone adalah …",
+        "pilihan" :{
+            "A." :"SSD",
+            "B." :"RAM",
+            "C." :"Memory card",
+            "D." :"HDD"
+        },
+        "jawaban" :"C"
+    },
+
+    {
+        "soal" : "9. Printer digunakan untuk …",
+        "pilihan" :{
+            "A." :"Mencetak dokumen ke kertas",
+            "B." :"Menampilkan gambar di layar ",
+            "C." :"Menyimpan Suara",
+            "D." :"Menampilkan Suara"
+        },
+        "jawaban" :"A"
+    },
+
+    {
+        "soal" : "10. Perangkat masukan yang digunakan untuk membaca kode batang adalah …",
+        "pilihan" :{
+            "A." :"Bercode reader",
+            "B." :"Monitor",
+            "C." :"Mouse",
+            "D." :"CPU"
+        },
+        "jawaban" :"A"
+    },
+
+    {
+        "soal" : "11. Yang termasuk dalam perangkat pemroses adalah …",
+        "pilihan" :{
+            "A." :"Scanner",
+            "B." :"RAM",
+            "C." :"Printer",
+            "D." :"Monitor"
+        },
+        "jawaban" :"B"
+    },
+
+    {
+        "soal" : "12. Monitor digunakan untuk … ",
+        "pilihan" :{
+            "A." :"Merekam Suara",
+            "B." :"Menampilkan Hasil Pemrosesan data",
+            "C." :"Mengontrol suara",
+            "D." :"Menyimpan data"
+        },
+        "jawaban" :"B"
+    },
+
+    {
+        "soal" : "13. Penyimpanan sekunder yang menggunakan cakram optik adalah …",
+        "pilihan" :{
+            "A." :"Flashdisk",
+            "B." :"CD",
+            "C." :"SSD",
+            "D." :"RAM"
+        },
+        "jawaban" :"B"
+    },
+
+    {
+        "soal" : "14. Contoh penyimpanan berbasis cloud adalah …",
+        "pilihan" :{
+            "A." :"Flashdisk",
+            "B." :"CD-ROM",
+            "C." :"SSD",
+            "D." :"Goole Drive"
+        },
+        "jawaban" :"D"
+    },
+
+    {
+        "soal" : "15.  Motherboard berfungsi sebagai …",
+        "pilihan" :{
+            "A." :"Alat Cetak",
+            "B." :"Pusat penyimpanan data",
+            "C." :"Tempat menghubugkan semua komponen komputer",
+            "D." :"parangkat grafis"
+        },
+        "jawaban" :"c"
     }
+
 ]
