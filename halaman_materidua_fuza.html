@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bab 4: Sistem Komputer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
+    <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -169,7 +169,8 @@
                 adalah komponen perangkat keras dalam komputer seperti CPU, memori,
                 dan alat input atau output. </p>
 
-            <p>c. Manajemen data: berupa pengendalian terhadap data masukan dan keluaran, termasuk dalam hal pengalokasian dalam piranti penyimpanan sekunder
+            <p>c. Manajemen data: berupa pengendalian terhadap data masukan dan keluaran, termasuk dalam hal
+                pengalokasian dalam piranti penyimpanan sekunder
                 maupun dalam memori utama</p>
 
             <li><img src="gambar1.1.png" class="device-img small-img" alt="Sistem OPerasi" width="100px" height="100px">
@@ -189,7 +190,7 @@
 
         </ul>
     </section>
-     <section id="proses">
+    <section id="proses">
         <h2>2. Program Aplikasi</h2>
         <p>Program aplikasi pada komputer meru pa kan
             perangkat lunak siap pakai yang di gunakan
@@ -218,11 +219,23 @@
                 sebagainya</p>
         </ul>
     </section>
-
-    <div class="button-container">
-        <button class="nav-button" id="nextBtn">Next Materi Selanjutnya</button>
-        <button class="nav-button" id="soalBtn">Lanjut ke Halaman Soal</button>
+    <div class="container text-center my-4">
+        <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-primary" onclick="window.location.href='halaman_materitiga_fuza.html'" id="nextBtn">
+                Next Materi Selanjutnya
+            </button>
+            <button class="btn btn-success" id="soalBtn">
+                Lanjut ke Halaman Soal
+            </button>
+        </div>
     </div>
+
+    <script>
+        // Arahkan ke halaman soal saat tombol diklik
+        document.getElementById('soalBtn').addEventListener('click', function () {
+            window.location.href = 'soal.html'; // Ganti sesuai nama file soal
+        });
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
