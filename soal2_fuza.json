@@ -1,0 +1,90 @@
+[
+    {
+        "soal": "1. Apa fungsi utama dari sistem operasi pada komputer?",
+        "pilihan": {
+            "A." :"Menyimpan data secara permanen",
+            "B." : "Menyediakan antarmuka untuk mencetak dokumen",
+            "C." : "Menjembatani interaksi antara pengguna dan komputer",
+            "D." : "Menyediakan layanan internet"
+        },
+        "jawaban" : "C"
+    },
+
+    {
+        "soal" : "2. Bagian dari sistem operasi yang bertugas melakukan layanan utama disebut...",
+        "pilihan" :{
+            "A." :"Driver",
+            "B." :"Kernel",
+            "C." :"BIOS",
+            "D." :"plugin"
+        },
+        "jawaban" :"B"
+    },
+
+    {
+        "soal" : "3. Apa saja yang termasuk dalam sumber daya komputer yang diatur oleh sistem operasi?",
+        "pilihan" :{
+            "A." :"Film, musik, dan dokumen",
+            "B." :"CPU, memori, dan perangkat I/O",
+            "C." :"Mouse, printer, dan meja",
+            "D." :"File, folder, dan shortcut"
+        },
+        "jawaban" :"B"
+    },
+
+     {
+        "soal" : "4. Closed Source Software adalah software yang...",
+        "pilihan" :{
+            "A." :"Gratis dan bebas dimodifikasi",
+            "B." :"Memiliki kode sumber terbuka",
+            "C." :"Tidak tersedia secara publik",
+            "D." :"Tidak membagikan source code-nya"
+        },
+        "jawaban" :"D"
+    },
+
+    {
+        "soal" : "5. Software yang dijalankan pertama kali saat komputer dinyalakan adalah...",
+        "pilihan" :{
+            "A." :" Game",
+            "B." :"Antivirus",
+            "C." :"Sistem operasi",
+            "D." :"Microsoft Word"
+        },
+        "jawaban" :"C"
+    },
+
+    {
+        "soal" : "6. Manakah berikut ini yang merupakan sistem operasi untuk perangkat seluler?",
+        "pilihan" :{
+            "A." :"Ubuntu",
+            "B." :"Android",
+            "C." :"Windows 10",
+            "D." :"Fedora"
+        },
+        "jawaban" :"B"
+    },
+
+     {
+        "soal" : "7. Sistem operasi yang termasuk keluarga distribusi Linux adalah...",
+        "pilihan" :{
+            "A." :"Windows 11",
+            "B." :"Android",
+            "C." :"Ubuntu",
+            "D." :"MacOS"
+        },
+        "jawaban" :"C"
+    },
+
+     {
+        "soal" : "8.  Contoh perangkat lunak open source adalah...",
+        "pilihan" :{
+            "A." :" Microsoft Office",
+            "B." :" CorelDraw",
+            "C." :"Audacity",
+            "D." :"Adobe Premieres"
+        },
+        "jawaban" :"C"
+    }
+]
+    
