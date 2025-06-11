@@ -18,19 +18,17 @@
         },
         "penjelasan": "Selain itu, ada juga cara berbagi koneksi internet dari telepon seluler dengan komputer lain yang terhubung. Cara itu disebut dengan tethering atau disebut juga phone-as-modem (PAM). Koneksi peranti seluler dengan peranti lain tersebut dapat dilakukan melalui LAN nirkabel (WLAN/Wi-Fi), melalui Bluetooth atau dengan koneksi fisik menggunakan kabel, misalnya melalui USB.Jika tethering dilakukan melalui WLAN, akan tercipta hotspot seluler, yang memungkinkan peranti telepon berfungsi sebagai router portabel. Hotspot seluler bisa dilindungi dengan PIN atau kata sandi. Peranti seluler yang terhubung ke internet dapat bertindak sebagai titik akses nirkabel portabel dan router untuk peranti yang terhubung dengannya."
     },
-
     {
-  "judul": "Closed-Circuit Television (CCTV)",
-  "konten": [
-    "CCTV atau biasa juga disebut video surveillance adalah alat yang mampu merekam kejadian dalam bentuk video. CCTV yang terpasang digunakan untuk merekam kejadian dalam radius tertentu di sekitar CCTV. CCTV adalah televisi dengan sistem rangkaian tertutup, karena sinyal tidak ditransmisikan secara terbuka seperti pada siaran televisi. Televisi dalam CCTV adalah kamera video yang berfungsi sebagai media telekomunikasi yang mengirimkan gambar bergerak ke monitor pengawas. Gambar bergerak atau video tersebut bisa direkam dan disimpan ke media penyimpan elektronis.",
-    "Saat ini, teknologi CCTV makin canggih dengan resolusi video yang makin baik, dan harga yang makin terjangkau membuatnya banyak digunakan di rumah dan di kantor. CCTV ini dapat dihidupmatikan dan dikendalikan dari jarak jauh menggunakan internet",
-    "Di beberapa kota besar, jalan juga telah dilengkapi dengan CCTV sehingga jika terjadi pelanggaran lalu lintas atau tindakan kriminal yang melibatkan kendaraan bermotor, rekaman CCTV dapat dipelajari dan polisi dapat mendeteksi kendaraan yang melanggar. Rekaman CCTV digunakan untuk mengidentifikasi bentuk, jenis, dan plat nomor kendaraan, serta lokasi kejadian. Hal ini memudahkan polisi untuk mencari pemilik kendaraan yang terlibat dalam pelanggaran atau tindakan kriminal tersebut",
-    {
-      "gambar": "cctv.png",
-      "keterangan": "cctv diperkotaan"
-    },
-    "CCTV dapat merekam kejadian dalam durasi waktu yang panjang. Dalam satu jam, mungkin akan terekam banyak kejadian dan kendaraan yang lewat. Pada saat polisi harus memeriksa rekaman CCTV dan mencari informasi, mungkin akan dibutuhkan waktu yang lama sekali. Untuk mempersempit pencarian, polisi dapat memilih hanya memeriksa rekaman pada jam tertentu. Pencarian informasi pada rekaman CCTV terkadang tidaklah cukup dengan hanya melihat rekaman videonya, tetapi diperlukan juga aplikasi untuk membantu polisi mencari dan mengidentifikasi suatu kejadian."
-  ]
-}
-
+        "judul": "Closed-Circuit Television (CCTV)",
+        "konten": [
+            "CCTV atau biasa juga disebut video surveillance adalah alat yang mampu merekam kejadian dalam bentuk video. CCTV yang terpasang digunakan untuk merekam kejadian dalam radius tertentu di sekitar CCTV. CCTV adalah televisi dengan sistem rangkaian tertutup, karena sinyal tidak ditransmisikan secara terbuka seperti pada siaran televisi. Televisi dalam CCTV adalah kamera video yang berfungsi sebagai media telekomunikasi yang mengirimkan gambar bergerak ke monitor pengawas. Gambar bergerak atau video tersebut bisa direkam dan disimpan ke media penyimpan elektronis.",
+            "Saat ini, teknologi CCTV makin canggih dengan resolusi video yang makin baik, dan harga yang makin terjangkau membuatnya banyak digunakan di rumah dan di kantor. CCTV ini dapat dihidupmatikan dan dikendalikan dari jarak jauh menggunakan internet",
+            "Di beberapa kota besar, jalan juga telah dilengkapi dengan CCTV sehingga jika terjadi pelanggaran lalu lintas atau tindakan kriminal yang melibatkan kendaraan bermotor, rekaman CCTV dapat dipelajari dan polisi dapat mendeteksi kendaraan yang melanggar. Rekaman CCTV digunakan untuk mengidentifikasi bentuk, jenis, dan plat nomor kendaraan, serta lokasi kejadian. Hal ini memudahkan polisi untuk mencari pemilik kendaraan yang terlibat dalam pelanggaran atau tindakan kriminal tersebut",
+            {
+                "gambar": "cctv.png",
+                "keterangan": "cctv diperkotaan"
+            },
+            "CCTV dapat merekam kejadian dalam durasi waktu yang panjang. Dalam satu jam, mungkin akan terekam banyak kejadian dan kendaraan yang lewat. Pada saat polisi harus memeriksa rekaman CCTV dan mencari informasi, mungkin akan dibutuhkan waktu yang lama sekali. Untuk mempersempit pencarian, polisi dapat memilih hanya memeriksa rekaman pada jam tertentu. Pencarian informasi pada rekaman CCTV terkadang tidaklah cukup dengan hanya melihat rekaman videonya, tetapi diperlukan juga aplikasi untuk membantu polisi mencari dan mengidentifikasi suatu kejadian."
+        ]
+    }
 ]
