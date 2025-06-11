@@ -209,6 +209,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -233,12 +234,13 @@
 
             <img src="gambar.siswi.png" alt="karakter" class="character">
 
-            <div class="text-content">
+            <div class="text-content text-center p-5">
                 <h1>Ayo Belajar</h1>
                 <h2>Informatika</h2>
                 <p>Seru, Interaktif, dan Mudah!</p>
-                <button onclick="startLearning()" class="btn btn-start">Mulai Belajar</button>
-                <a class="navbar-brand" href="halaman_mapel_melly.html"></a>
+                <button onclick="window.location.href='halaman_mapel_melly.html'" class="btn btn-primary">Mulai Belajar</button>
+                <br><br>
+                <a class="navbar-brand" href="halaman_mapel_melly.html">Kembali ke Mapel</a>
             </div>
         </div>
     </main>
@@ -252,7 +254,7 @@
         </div>
     </div>
 
-     <script>
+    <script>
         const usernameDisplay = document.querySelector('.Username');
         const usernameModal = document.getElementById('usernameModal');
         const inputUsername = document.getElementById('inputUsername');
