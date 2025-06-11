@@ -165,41 +165,46 @@
       width: 30px;
       height: 30px;
       background-color: white;
-      clip-path: polygon(
-        50% 0%,
-        61% 35%,
-        98% 35%,
-        68% 57%,
-        79% 91%,
-        50% 70%,
-        21% 91%,
-        32% 57%,
-        2% 35%,
-        39% 35%
-      );
+      clip-path: polygon(50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%);
       opacity: 0.8;
       animation: twinkle 2s infinite;
     }
 
     @keyframes twinkle {
-      0%, 100% {
+
+      0%,
+      100% {
         opacity: 0.8;
       }
+
       50% {
         opacity: 0.3;
       }
     }
 
     @keyframes bounce {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(-8px);
       }
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -216,7 +221,7 @@
   <div class="star" style="top: 150px; left: 80%;"></div>
   <div class="star" style="top: 350px; left: 20%;"></div>
 
-  
+
   <main>
     <div class="flex-container">
       <img src="buku.png" class="icon-image buku-icon" alt="Buku" width="150px">
