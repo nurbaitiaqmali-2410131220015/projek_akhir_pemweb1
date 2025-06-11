@@ -1,0 +1,68 @@
+[
+    {
+        "judul": "1. Sistem Operasi (Operating System)",
+        "deskripsi": "Sistem operasi merupakan perangkat lunak utama yang memungkinkan komputer dapat beroperasi. Sistem operasilah yang menjembatani pengguna sehingga dapat berinteraksi dengan komputer. Sistem operasi sering disebut perangkat lunak sistem, yang merupakan perangkat lunak pertama yang dijalankan pada saat komputer dinyalakan. Sistem operasi biasanya diletakkan pada penyim pan sekunder seperti harddisk, SSD, dan lainnya. Sistem operasi bertugas memberikan la yan an utama untuk perangkat lunak lain yang dijalankan, berupa: penjadwalan tugas, pengelolaan memori, pengaturan interaksi dengan pengguna, dan akses ke penyimpan sekunder. Bagian kode pada sistem operasi yang melakukan layanan utama disebut kernel.",
+        "fungsi": [
+            {
+                "nama": "A. Manajemen proses",
+                "penjelasan": " mencakup penyiap an, penjadwalan, dan pemantauan proses (program) yang sedang dijalankan pada komputer. "
+            },
+            {
+                "nama": "B. Manajemen sumber daya",
+                "penjelasan": "berkaitan dengan pengendalian penggunaan sumber daya komputer yang sedang dipakai oleh perangkat lunak sistem maupun perangkat lunak aplikasi lain yang sedang berjalan. Sumber daya adalah komponen perangkat keras dalam komputer seperti CPU, memori, dan alat input atau output."
+            },
+            {
+                "nama": "C. Manajemen data",
+                "penjelasan": "Berupa pengendalian terhadap data masukan dan keluaran, termasuk dalam hal pengalokasian dalam piranti penyimpanan sekunder maupun dalam memori utama"
+            }
+        ],
+        "contoh": {
+            "gambar": "gambar1.1.png",
+            "judul": "Sistem Operasi",
+            "penjelasan": "Saat ini, sistem operasi untuk komputer PC/ desktop yang banyak digunakan adalah Microsoft Windows, MacOS dari Apple Inc, dan distribusi Linux (Debian, Fedora, Ubuntu). Sistem operasi untuk perangkat seluler (smartphone dan tablet) terbanyak adalah Android, dan Apple iOS. Sistem operasi distribusi Linux banyak digunakan pada komputer server dan sektor superkomputer. Kelas khusus lainnya dari sistem operasi adalah sistem operasi untuk keperluan embedded dan real-time system."
+        }
+    },
+    {
+        "judul": "2. Program Aplikasi",
+        "deskripsi": "Program aplikasi pada komputer merupakan perangkat lunak siap pakai yang digunakan untuk membantu melaksanakan pekerjaan penggunanya. Aplikasi ini disiapkan sesuai kebutuhan masing-masing pengguna.",
+        "gambar_aplikasi": [
+            {
+                "nama": "Sistem Operasi",
+                "gambar": "sistemOperasi.png",
+                "keterangan": "Contoh gambar sistem operasi"
+            },
+            {
+                "nama": "Tabel Aplikasi 1",
+                "gambar": "tabel1.png",
+                "keterangan": "Gambar tabel jenis-jenis program aplikasi"
+            },
+            {
+                "nama": "Tabel Aplikasi 2",
+                "gambar": "tabel2.png",
+                "keterangan": "Gambar tabel lanjutan jenis-jenis aplikasi"
+            }
+        ],
+        "jenis_software_berdasarkan_sumber": [
+            {
+                "nama": "Open Source Software",
+                "penjelasan": "Perangkat lunak dengan kode sumber terbuka untuk publik. Dapat dimodifikasi dan didistribusikan ulang sesuai lisensi.",
+                "contoh": [
+                    "Audacity",
+                    "XAMPP",
+                    "Linux",
+                    "Notepad++",
+                    "Android"
+                ]
+            },
+            {
+                "nama": "Closed Source Software",
+                "penjelasan": "Perangkat lunak yang tersedia untuk umum tanpa menyertakan kode sumbernya.",
+                "contoh": [
+                    "Microsoft Windows",
+                    "Adobe Photoshop",
+                    "CorelDraw"
+                ]
+            }
+        ]
+    }
+]
