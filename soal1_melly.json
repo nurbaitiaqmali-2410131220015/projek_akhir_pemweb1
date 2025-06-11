@@ -1,0 +1,82 @@
+[
+    {
+        "soal": "1. Apa yang dimaksud dengan jaringan komputer?",
+        "pilihan_a": "Sistem operasi yang menghubungkan komputer",
+        "pilihan_b": "Kumpulan komputer yang berdiri sendiri",
+        "pilihan_c": "Kumpulan dua atau lebih komputer yang saling terhubung",
+        "pilihan_d": "Internet cepat tanpa kabel",
+        "jawaban": "c"
+    },
+    {
+        "soal": "2. Jaringan LAN biasanya digunakan di:",
+        "pilihan_a": "Antar negara",
+        "pilihan_b": "Dalam satu kota",
+        "pilihan_c": "Sekolah atau rumah",
+        "pilihan_d": "Wilayah antar pulau",
+        "jawaban": "c"
+    },
+    {
+        "soal": "3. MAN adalah jaringan komputer yang mencakup:",
+        "pilihan_a": "Antar negara",
+        "pilihan_b": "Dalam satu gedung",
+        "pilihan_c": "Satu kota",
+        "pilihan_d": "Satu ruangan",
+        "jawaban": "c"
+    },
+    {
+        "soal": "4. WAN adalah jaringan komputer yang mencakup:",
+        "pilihan_a": "Antar kota",
+        "pilihan_b": "Antar negara",
+        "pilihan_c": "Dalam satu sekolah",
+        "pilihan_d": "Antar ruangan",
+        "jawaban": "b"
+    },
+    {
+        "soal": "5. Internet adalah:",
+        "pilihan_a": "Salah satu jenis LAN",
+        "pilihan_b": "Jaringan lokal rumah",
+        "pilihan_c": "Jaringan komputer terbesar di dunia",
+        "pilihan_d": "Aplikasi pencari informasi",
+        "jawaban": "c"
+    },
+    {
+        "soal": "6. World Wide Web (WWW) adalah:",
+        "pilihan_a": "Jaringan kabel dalam sekolah",
+        "pilihan_b": "Aplikasi untuk mengetik",
+        "pilihan_c": "Kumpulan halaman web yang bisa dibuka dengan browser",
+        "pilihan_d": "Penyedia Wi-Fi",
+        "jawaban": "c"
+    },
+    {
+        "soal": "7. Contoh browser untuk mengakses WWW adalah, kecuali:",
+        "pilihan_a": "Firefox",
+        "pilihan_b": "Safari",
+        "pilihan_c": "Zoom",
+        "pilihan_d": "Google Chrome",
+        "jawaban": "c"
+    },
+    {
+        "soal": "8. Wi-Fi adalah singkatan dari:",
+        "pilihan_a": "Wireless Folder",
+        "pilihan_b": "Wired Fidelity",
+        "pilihan_c": "Wireless Fidelity",
+        "pilihan_d": "Wide Fidelity",
+        "jawaban": "c"
+    },
+    {
+        "soal": "9. Fungsi utama Wi-Fi adalah:",
+        "pilihan_a": "Mencetak dokumen",
+        "pilihan_b": "Menghubungkan perangkat ke internet tanpa kabel",
+        "pilihan_c": "Menyalakan laptop",
+        "pilihan_d": "Menyimpan file",
+        "jawaban": "b"
+    },
+    {
+        "soal": "10. Tethering adalah cara untuk:",
+        "pilihan_a": "Mematikan Wi-Fi secara otomatis",
+        "pilihan_b": "Menghubungkan dua perangkat lewat kabel USB",
+        "pilihan_c": "Membagikan koneksi internet dari HP ke perangkat lain",
+        "pilihan_d": "Menghapus jaringan Wi-Fi",
+        "jawaban": "c"
+    }
+]
