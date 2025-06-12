@@ -94,6 +94,27 @@
             <strong class="me-3">D</strong> ${soal.pilihan_d}
         </button>
     `;
+            const tombolJawaban = document.querySelectorAll('#pilihan-box button');
+            tombolJawaban.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const jawabanUser = this.getAttribute('data-jawaban');
+                    const jawabanBenar = soal.jawaban.toLowerCase();
+
+                    tombolJawaban.forEach(b => {
+                        b.disabled = true;
+
+                        if (b.getAttribute('data-jawaban') === jawabanBenar) {
+                            b.classList.remove('btn-light');
+                            b.classList.add('btn-success'); // hijau
+                        }
+
+                        if (b.getAttribute('data-jawaban') !== jawabanBenar && b === this) {
+                            b.classList.remove('btn-light');
+                            b.classList.add('btn-danger'); // merah
+                        }
+                    });
+                });
+            });
         }
     </script>
 
