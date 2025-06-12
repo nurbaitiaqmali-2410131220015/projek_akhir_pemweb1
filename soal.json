@@ -1,0 +1,164 @@
+[
+    {
+        "soal":"1.Apa yang dimaksud dengan algoritma?",
+        "pilihan_a":"Gambar digital yang dianimasikan",
+        "pilihan_b":"Urutan langkah untuk menyelesaikan suatu tugas",
+        "pilihan_c":"Proses memasukkan data ke komputer",
+        "pilihan_d":"Cara komputer menyimpan data",
+        "jawaban":"B"
+    },
+    {
+        "soal":"2.Tujuan utama dari belajar pemrograman adalah...",
+        "pilihan_a":"Memberikan instruksi kepada komputer",
+        "pilihan_b":"Menggambar dikomputer",
+        "pilihan_c":"Menyalakan komputer",
+        "pilihan_d":"Mengetik dokumen",
+        "jawaban":"A"
+    },
+    {
+        "soal":"3.Apa yang akan terjadi jika kalian menambahkan blok forever pada kode?",
+        "pilihan_a":"Program akan diulang terus menerus",
+        "pilihan_b":"Program akan berhenti setelah satu langkah",
+        "pilihan_c":"Program akan berjalan satu kali",
+        "pilihan_d":"Program akan menghapus sprite",
+        "jawaban":"A"
+    },
+    {
+        "soal":"4.Untuk memulai proyeke baru di scracth kita klik menu",
+        "pilihan_a":"File",
+        "pilihan_b":"Home",
+        "pilihan_c":"Load",
+        "pilihan_d":"Create",
+        "jawaban":"D"
+    },
+    {
+        "soal":"5.Untuk membuat sprite menyuarakan bunyi kita bisa menggunakan blok...",
+        "pilihan_a":"Play sound",
+        "pilihan_b":"Looks",
+        "pilihan_c":"Motion",
+        "pilihan_d":"Control",
+        "jawaban":"A"
+    },
+    {
+        "soal":"6.Fungsi dari blok if-then-else adalah...",
+        "pilihan_a":"Menentukan aksi berdasarkan kondisi",
+        "pilihan_b":"Menjalankan program tanpa kondisi",
+        "pilihan_c":"Memberikan efek suara",
+        "pilihan_d":"Menambahkan sprite",
+        "jawaban":"A"
+    },
+    {
+        "soal":"7.Yang termasuk contoh pemrograman visual adalah...",
+        "pilihan_a":"Python",
+        "pilihan_b":"Scratch",
+        "pilihan_c":"HTML",
+        "pilihan_d":"Java",
+        "jawaban":"B"
+    },
+    {
+        "soal":"8.Jika kita ingin mengubah latar belakang (backdrop) di Scartch, kita dapat menggunakan blok dari kategori...",
+        "pilihan_a":"Sound",
+        "pilihan_b":"Motion",
+        "pilihan_c":"Looks",
+        "pilihan_d":"Events ",
+        "jawaban":"C"
+    },
+    {
+        "soal":"9.Untuk membuat sprite bergerak berjalan lebih natural kita bisa menambahkan...",
+        "pilihan_a":"Blok show",
+        "pilihan_b":"Blok hide",
+        "pilihan_c":"Blok stop all",
+        "pilihan_d":"Blok next costume",
+        "jawaban":"D"
+    },
+    {
+        "soal":"10.scratch adalah...",
+        "pilihan_a":"Pemrograman visual berbasis blok",
+        "pilihan_b":"Bahasa pemrograman berbasis teks",
+        "pilihan_c":"Sistem oprasi komputer",
+        "pilihan_d":"Program untuk menggambar",
+        "jawaban":"A"
+    },
+    {
+        "soal":"11.Blok 'when green flag clicked' digunakan untuk...",
+        "pilihan_a":"Menjalankan perintah saat proyek dimulai",
+        "pilihan_b":"Menghapus sprite dari panggung",
+        "pilihan_c":"Program akan berjalan satu kali",
+        "pilihan_d":"Mengganti kostum sprite",
+        "jawaban":"A"
+    },
+    {
+        "soal":"12.Apa fungsi dari blok 'when this sprite cliked'?",
+        "pilihan_a":"Menghapus sprite dari panggung",
+        "pilihan_b":"Menjalankan perintah saat sprite diklik",
+        "pilihan_c":"Mengubah ukuran sprite",
+        "pilihan_d":"Mengatur suara ketika sprite disentuh",
+        "jawaban":"B"
+    },
+    {
+        "soal":"13.Fungsi blok “next costume” pada sprite adalah...",
+        "pilihan_a":"Mengubah tampilan sprite ke tampilan berikutnya",
+        "pilihan_b":"Menghapus sprite",
+        "pilihan_c":"Memindahkan sprite",
+        "pilihan_d":"Menggandakan sprite",
+        "jawaban":"A"
+    },
+    {
+        "soal":"14.Blok “wait 1 seconds” digunakan untuk...",
+        "pilihan_a":"Mempercepat sprite",
+        "pilihan_b":"Menghapus sprite",
+        "pilihan_c":"Mematikan suara",
+        "pilihan_d":"Memberhentikan sprite selamanya",
+        "jawaban":"C"
+    },
+    {
+        "soal":"15.Fungsi dari blok “switch backdrop to” adalah...",
+        "pilihan_a":"Menggandakan sprite",
+        "pilihan_b":"Mengganti nama sprite",
+        "pilihan_c":"Menyimpan file proyek",
+        "pilihan_d":"Mengubah latar belakang panggung",
+        "jawaban":"D"
+    },
+    {
+        "soal":"16.Apa yang terjadi jika kita menggunakan blok “repeat 10” dengan “move 10 steps” di dalamnya?",
+        "pilihan_a":"Sprite akan bergerak 100 langkah",
+        "pilihan_b":"Sprite akan tetap diam",
+        "pilihan_c":"Sprite akan bergerak 10 langkah sekali",
+        "pilihan_d":"Sprite akan menghilang",
+        "jawaban":"A"
+    },
+    {
+        "soal":"17.Blok “say Hello! for 2 seconds” akan membuat sprite...",
+        "pilihan_a":"Menghapus teks di panggung",
+        "pilihan_b":"Menulis “Hello!” di atas panggung selama 2 detik",
+        "pilihan_c":"Memutar sprite ke arah tertentu",
+        "pilihan_d":"Mengeluarkan suara Hello",
+        "jawaban":"B"
+    },
+    {
+        "soal":"18.Kategori blok yang digunakan untuk mendeteksi posisi atau sentuhan adalah...",
+        "pilihan_a":"Sensing",
+        "pilihan_b":"Looks",
+        "pilihan_c":"Variables",
+        "pilihan_d":"Control",
+        "jawaban":"A"
+    },
+    {
+        "soal":"19.Apa yang terjadi jika blok “stop all” digunakan di akhir program?",
+        "pilihan_a":"Sprite akan menabrak pinggir",
+        "pilihan_b":"Semua sprite akan hilang",
+        "pilihan_c":"Semua aktivitas program berhenti",
+        "pilihan_d":"Program akan terus berjalan",
+        "jawaban":"C"
+    },
+    {
+        "soal":"20.Ketika menggunakan “if-then-else”, kondisi tidak terpenuhi maka...",
+        "pilihan_a":"Sprite akan bergerak mundur",
+        "pilihan_b":"Seluruh kode akan dilewati",
+        "pilihan_c":"Program berhenti",
+        "pilihan_d":"Bagian “else” akan dijalankan",
+        "jawaban":"D"
+    }
+
+    
+]
