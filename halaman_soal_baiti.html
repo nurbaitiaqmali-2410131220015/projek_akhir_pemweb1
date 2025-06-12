@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid d-flex justify-content-between align-items-center">
@@ -59,10 +61,45 @@
             .catch(error => {
                 console.error("Gagal mengambil data soal:", error);
             });
+
+        function tampilkanSoal(data, nomor) {
+            if (!data || !data[nomor]) {
+                document.getElementById("soal-box").innerHTML = "<p class='text-danger'>Soal tidak ditemukan.</p>";
+                document.getElementById("pilihan-box").innerHTML = "";
+                return;
+            }
+
+            const soal = data[nomor];
+
+            document.getElementById('soal-box').innerHTML = `
+        <div class="text-center">
+            <span class="badge bg-info text-dark rounded-pill px-4 py-2 mb-3 fw-semibold">
+                Soal ${nomor + 1} dari ${data.length}
+            </span>
+        </div>
+        <p class="card-text text-dark">${soal.soal}</p>
+    `;
+
+            document.getElementById('pilihan-box').innerHTML = `
+        <button class="btn btn-light text-dark w-100 mb-2 text-start rounded-pill p-3" data-jawaban="a">
+            <strong class="me-3">A</strong> ${soal.pilihan_a}
+        </button>
+        <button class="btn btn-light text-dark w-100 mb-2 text-start rounded-pill p-3" data-jawaban="b">
+            <strong class="me-3">B</strong> ${soal.pilihan_b}
+        </button>
+        <button class="btn btn-light text-dark w-100 mb-2 text-start rounded-pill p-3" data-jawaban="c">
+            <strong class="me-3">C</strong> ${soal.pilihan_c}
+        </button>
+        <button class="btn btn-light text-dark w-100 mb-2 text-start rounded-pill p-3" data-jawaban="d">
+            <strong class="me-3">D</strong> ${soal.pilihan_d}
+        </button>
+    `;
+        }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
