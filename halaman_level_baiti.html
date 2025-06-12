@@ -97,32 +97,18 @@
                     data-level="10">10</button>
 
             </div>
-            <div class="col">
-                <button class="btn btn-outline-light bg-info text-white w-50 py-3 level-btn"
-                    data-level="11">11</button>
-
-            </div>
-            <div class="col">
-                <button class="btn btn-outline-light bg-info text-white w-50 py-3 level-btn"
-                    data-level="12">12</button>
-
-            </div>
-            <div class="col">
-                <button class="btn btn-outline-light bg-info text-white w-50 py-3 level-btn"
-                    data-level="13">13</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-outline-light bg-info text-white w-50 py-3 level-btn"
-                    data-level="14">14</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-outline-light bg-info text-white w-50 py-3 level-btn"
-                    data-level="15">15</button>
-            </div>
         </div>
     </section>
 
+    <script>
+        const levelContainer = document.querySelector("#materi .row");
+        const currentLevelEl = document.getElementById("current-level");
+        const prevBtn = document.getElementById("prev-btn");
+        const nextBtn = document.getElementById("next-btn");
 
+        let pageIndex = parseInt(localStorage.getItem("pageIndex")) || 0; // halaman ke-0 berarti soal 1-10, halaman ke-1 berarti soal 11-20
+        const maxPages = 10;
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
