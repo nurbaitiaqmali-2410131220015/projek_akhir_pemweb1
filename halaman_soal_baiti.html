@@ -48,6 +48,17 @@
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(name);
         }
+
+        const nomor = parseInt(getQueryParameter('nomor')) || 0;
+        const namaFile = getQueryParameter('file') || 'soal';
+        fetch(`${namaFile}.json`)
+            .then(response => response.json())
+            .then(data => {
+                tampilkanSoal(data, nomor);
+            })
+            .catch(error => {
+                console.error("Gagal mengambil data soal:", error);
+            });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
