@@ -107,11 +107,11 @@
         const nextBtn = document.getElementById("next-btn");
 
         let pageIndex = parseInt(localStorage.getItem("pageIndex")) || 0; // halaman ke-0 berarti soal 1-10, halaman ke-1 berarti soal 11-20
-        const maxPages = 10;
+        const maxPages = 2;
 
         function updateLevelDisplay() {
             const start = pageIndex * 10 + 1;
-            const end = start + 2;
+            const end = start + 9;
             currentLevelEl.textContent = `Level ${pageIndex + 1}`;
 
             levelContainer.innerHTML = "";
