@@ -129,7 +129,7 @@
                 btn.dataset.index = soalNomor;
 
                 btn.addEventListener("click", () => {
-                    window.location.href = `soal.html?nomor=${soalNomor}`;
+                    window.location.href = `halaman_soal_baiti.html?nomor=${soalNomor}`;
                 });
 
                 col.appendChild(btn);
@@ -154,7 +154,7 @@
 
         currentLevelEl.addEventListener("click", () => {
             localStorage.setItem("pageIndex", pageIndex)
-            window.location.href = `soal.html?nomor=${pageIndex * 10}`;
+            window.location.href = `halaman_soal_baiti.html?nomor=${pageIndex * 10}`;
         });
         updateLevelDisplay();
     </script>
