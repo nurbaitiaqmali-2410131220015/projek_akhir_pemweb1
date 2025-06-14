@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jaringan Komputer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #93d3ea;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+
+        .content-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            color: #2a5885;
+            border-bottom: 2px solid #2a5885;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #2a5885;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #3a6ea5;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-card {
+            background-color: #f0f7ff;
+            border-left: 4px solid #3a6ea5;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 10px 0;
+            display: block;
+        }
+
+        .img-caption {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #2a5885;
+        }
+
+        .next-button {
+            background-color: #2a5885;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 20px 0;
+            display: inline-block;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .next-button:hover {
+            background-color: #3a6ea5;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar"
+        style="background-color: #93d3ea; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="halaman_belajar_fuza.html">
+                <i class="bi bi-house bg-light text-dark rounded-circle d-flex align-items-center justify-content-center"
+                    style="width: 40px; height: 40px;"></i>
+            </a>
+            <div class="position-absolute start-50 translate-middle-x">
+                <span class="text-white fw-bold h5">Jaringan Komputer</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-container">
+        <div id="content">
+        </div>
+
+        <div class="button-container">
+            <a href="jaringan_komputer.json" class="next-button">Lanjut ke Halaman Soal</a>
+        </div>
+    </div>
+
+    <script>
+        async function loadContent() {
+            try {
+                const response = await fetch('materi_melly.json');
+                if (!response.ok) {
+                    throw new Error('Gagal memuat data');
+                }
+                const data = await response.json();
+                displayContent(data);
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('content').innerHTML =
+                    '<p class="card">Gagal memuat konten. Silakan coba lagi nanti.</p>';
+            }
+        }
+
+        function displayContent(data) {
+            const contentDiv = document.getElementById('content');
+            let html = '';
+
+            data.forEach(item => {
+                html += `<div class="card">
+                    <h2>${item.judul}</h2>`;
+
+                if (item.gambar) {
+                    html += `<img src="${item.gambar}" alt="${item.keterangan || ''}">
+                             <p class="img-caption">${item.keterangan || ''}</p>`;
+                }
+
+                if (item.penjelasan) {
+                    html += `<p>${item.penjelasan}</p>`;
+                }
+
+                if (item.sub_judul && item.sub_judul.length > 0) {
+                    item.sub_judul.forEach(subItem => {
+                        html += `<div class="sub-card">
+                            <h3>${subItem.judul}</h3>`;
+
+                        if (subItem.deskripsi) {
+                            html += `<p><span class="highlight">Deskripsi:</span> ${subItem.deskripsi}</p>`;
+                        }
+
+                        if (subItem.penjelasan) {
+                            html += `<p>${subItem.penjelasan}</p>`;
+                        }
+
+                        if (subItem.gambar) {
+                            html += `<img src="${subItem.gambar}" alt="${subItem.judul}">`;
+                        }
+
+                        if (subItem['cara kerja wifi']) {
+                            html += `<p><span class="highlight">Cara Kerja WiFi:</span> ${subItem['cara kerja wifi']}</p>`;
+                        }
+
+                        if (subItem['cara kerja']) {
+                            html += `<p><span class="highlight">Cara Kerja:</span> ${subItem['cara kerja']}</p>`;
+                        }
+
+                        html += `</div>`;
+                    });
+                }
+
+                html += `</div>`;
+            });
+
+            contentDiv.innerHTML = html;
+        }
+
+        window.onload = loadContent;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+[
+    {
+        "judul": "Pengantar Jaringan Komputer",
+        "gambar": "komputer melly.jpeg",
+        "keterangan": "gambar komputer",
+        "penjelasan": "Jaringan komputer adalah kumpulan dua atau lebih komputer yang saling terhubung untuk saling berbagi informasi dan sumber daya, seperti printer, file, atau koneksi internet. Komputer dalam jaringan ini bisa terhubung menggunakan kabel (seperti LAN) atau tanpa kabel (seperti Wi-Fi). Jaringan komputer punya beberapa jenis berdasarkan luas wilayahnya. Misalnya, LAN (Local Area Network) hanya mencakup satu ruangan atau gedung seperti di sekolah atau rumah. MAN (Metropolitan Area Network) bisa menjangkau satu kota, sedangkan WAN (Wide Area Network) mencakup jarak yang sangat luas seperti antar negara. Jaringan komputer terbesar di dunia disebut internet. Di dalam internet, ada layanan bernama World Wide Web (WWW), yaitu kumpulan halaman-halaman web yang bisa kita buka lewat browser seperti Google Chrome, Firefox, atau Safari. Dengan WWW, kita bisa mencari informasi, menonton video, membaca berita, dan masih banyak lagi."
+    },
+    {
+        "judul": "Koneksi Internet",
+        "sub_judul": [
+            {
+                "judul": "Wireless LAN (WiFi)",
+                "deskripsi": "Wireless LAN atau WiFi adalah teknologi yang memungkinkan perangkat terhubung ke jaringan internet tanpa kabel melalui sinyal radio.",
+                "penjelasan": "Wireless LAN atau yang lebih dikenal dengan WiFi adalah teknologi jaringan lokal yang menggunakan gelombang radio untuk menghubungkan perangkat secara nirkabel dalam area terbatas, seperti rumah, kantor, atau kampus. Dengan WiFi, perangkat seperti laptop, smartphone, tablet, dan perangkat lain dapat terhubung ke internet atau ke jaringan lokal tanpa perlu menggunakan kabel fisik.",
+                "gambar": "download.jpeg",
+                "cara kerja wifi": "WiFi bekerja dengan menggunakan perangkat yang disebut router atau access point, yang memancarkan sinyal radio. Perangkat yang mendukung WiFi dapat menangkap sinyal ini dan berkomunikasi dengan jaringan. Protokol standar yang paling umum digunakan adalah IEEE 802.11, dengan beberapa versi seperti 802.11n, 802.11ac, dan terbaru 802.11ax (WiFi 6)."
+            },
+            {
+                "judul": "Tethering",
+                "deskripsi": "Tethering adalah metode berbagi koneksi internet dari satu perangkat, seperti ponsel, ke perangkat lain melalui WiFi, Bluetooth, atau kabel USB.",
+                "penjelasan": "Tethering adalah cara menghubungkan perangkat lain (seperti laptop, tablet, atau perangkat lain) ke internet menggunakan koneksi data dari smartphone atau perangkat seluler lain sebagai sumber akses internet. Dengan kata lain, ketika kamu menggunakan tethering, smartphone kamu berfungsi sebagai modem atau hotspot yang membagikan koneksi internetnya ke perangkat lain secara nirkabel (WiFi), melalui kabel USB, atau lewat Bluetooth."
+            }
+        ]
+    },
+    {
+        "judul": "Proteksi Data dan File",
+        "sub_judul": [
+            {
+                "judul": "Cara Kerja Enkripsi",
+                "penjelasan": "Enkripsi adalah proses mengamankan data dengan mengubah informasi asli menjadi bentuk kode yang tidak bisa dimengerti tanpa kunci khusus. Proses ini menggunakan algoritma dan kunci enkripsi untuk mengacak data sehingga hanya pihak yang memiliki kunci tersebut yang dapat mengembalikannya ke bentuk semula. Dengan cara ini, enkripsi melindungi data dari akses atau pencurian oleh pihak yang tidak berwenang."
+            },
+            {
+                "judul": "Caesar's Cipher",
+                "penjelasan": "Caesar's Cipher adalah salah satu teknik enkripsi paling sederhana dan tertua yang dikenal dalam sejarah kriptografi. Dinamai menurut Julius Caesar, pemimpin Romawi yang menggunakan metode ini untuk mengirim pesan rahasia kepada tentaranya agar tidak mudah dibaca oleh musuh.",
+                "cara kerja": "Prinsip dasar Caesar's Cipher adalah menggeser setiap huruf dalam pesan asli (plaintext) sebanyak sejumlah posisi tertentu dalam alfabet. Pergeseran ini disebut key atau shift. Contohnya, jika kunci pergeseran adalah 3, maka huruf A menjadi D, B menjadi E, dan seterusnya. Jika pergeseran melewati huruf Z, perhitungan dilanjutkan dari huruf A kembali (rotasi alfabet)."
+            }
+        ]
+    }
+]
