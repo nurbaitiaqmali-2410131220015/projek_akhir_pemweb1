@@ -154,22 +154,6 @@
 
   <script>
     function selectOption(option) {
-      if (option === 'materi') {
-        window.location.href = 'materi.html';
-      } else if (option === 'video') {
-        window.location.href = 'halaman_materi_video_baiti.html';
-      }
-    }
-
-    const starsContainer = document.querySelector('.stars');
-    for (let i = 0; i < 50; i++) {
-      const star = document.createElement('div');
-      star.classList.add('star');
-      star.style.top = `${Math.random() * 100}%`;
-      star.style.left = `${Math.random() * 100}%`;
-      star.style.animationDelay = `${Math.random() * 2}s`;
-      starsContainer.appendChild(star);
-
       const selectedMapel = localStorage.getItem('selectedSubject');
 
       if (!selectedMapel) {
@@ -182,6 +166,19 @@
       } else if (option === 'video') {
         window.location.href = `halaman_materi_video_baiti.html?mapel=${mapelParam}`;
       }
+      
+    }
+
+    const starsContainer = document.querySelector('.stars');
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDelay = `${Math.random() * 2}s`;
+      starsContainer.appendChild(star);
+
+      
     }
 
   </script>
