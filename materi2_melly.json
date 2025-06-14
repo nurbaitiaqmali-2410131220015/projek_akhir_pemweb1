@@ -1,8 +1,17 @@
-[
+{
+  "judul": "Koneksi Internet",
+  "sub_judul": [
     {
-        "judul": "Koneksi Internet",
-        "gambar": "internet melly.jpeg",
-        "keterangan": "gambar koneksi internet",
-        "penjelasan": "Agar bisa menggunakan internet, perangkat seperti laptop atau HP harus terhubung ke jaringan. Salah satu cara paling umum adalah melalui Wireless LAN atau yang lebih dikenal dengan Wi-Fi. Wi-Fi memungkinkan perangkat terhubung ke internet tanpa kabel, dan sering kita jumpai di rumah, sekolah, kafe, dan tempat umum lainnya. Selain Wi-Fi, kita juga bisa menggunakan tethering, yaitu membagikan koneksi internet dari HP ke perangkat lain. Misalnya, saat kamu tidak punya Wi-Fi di laptop, kamu bisa mengaktifkan hotspot di HP agar laptop bisa terhubung ke internet. Tethering biasanya menggunakan paket data dari kartu SIM. Dengan dua cara ini, kita bisa tetap online kapan pun dan di mana pun."
+      "judul": "Wireless LAN (WiFi)",
+      "deskripsi": "Wireless LAN atau WiFi adalah teknologi yang memungkinkan perangkat terhubung ke jaringan internet tanpa kabel melalui sinyal radio.",
+      "penjelasan": "Wireless LAN atau yang lebih dikenal dengan WiFi adalah teknologi jaringan lokal yang menggunakan gelombang radio untuk menghubungkan perangkat secara nirkabel dalam area terbatas, seperti rumah, kantor, atau kampus. Dengan WiFi, perangkat seperti laptop, smartphone, tablet, dan perangkat lain dapat terhubung ke internet atau ke jaringan lokal tanpa perlu menggunakan kabel fisik.",
+      "gambar": "internet melly.jpeg",
+      "cara kerja wifi":"WiFi bekerja dengan menggunakan perangkat yang disebut router atau access point, yang memancarkan sinyal radio. Perangkat yang mendukung WiFi dapat menangkap sinyal ini dan berkomunikasi dengan jaringan. Protokol standar yang paling umum digunakan adalah IEEE 802.11, dengan beberapa versi seperti 802.11n, 802.11ac, dan terbaru 802.11ax (WiFi 6)."
+    },
+    {
+      "judul": "Tethering",
+      "deskripsi": "Tethering adalah metode berbagi koneksi internet dari satu perangkat, seperti ponsel, ke perangkat lain melalui WiFi, Bluetooth, atau kabel USB.",
+      "penjelasan": "Tethering adalah cara menghubungkan perangkat lain (seperti laptop, tablet, atau perangkat lain) ke internet menggunakan koneksi data dari smartphone atau perangkat seluler lain sebagai sumber akses internet. Dengan kata lain, ketika kamu menggunakan tethering, smartphone kamu berfungsi sebagai modem atau hotspot yang membagikan koneksi internetnya ke perangkat lain secara nirkabel (WiFi), melalui kabel USB, atau lewat Bluetooth."
     }
-]
+  ]
+}
