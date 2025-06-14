@@ -3,107 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Materi Sistem Komputer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <title>Materi Informatika</title>
   <style>
     body {
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #dbeafe;
-      color: #1f2937;
+      font-family: Arial, sans-serif;
+      background-color: #e7f0fd;
+      margin: 0;
+      padding: 0;
     }
-    nav.navbar {
-      background: #3b82f6;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      display: flex;
-      align-items: center;
-    }
-    .navbar-brand i {
-      font-size: 1.8em;
+
+    header {
+      background-color: #3f88fb;
       color: white;
-      margin-right: 15px;
-      cursor: pointer;
-    }
-    .title-text {
-      color: white;
-      font-size: 1.2em;
+      padding: 15px 20px;
       font-weight: bold;
-      flex-grow: 1;
-      text-align: center;
+      font-size: 18px;
     }
-    #materi-container {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 25px;
-      margin: 20px auto;
-      width: 90%;
+
+    .container {
       max-width: 900px;
+      background-color: white;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    #materi-container h2 {
-      color: #1e40af;
+
+    h2 {
+      color: #0044cc;
       margin-top: 0;
     }
-    .perangkat-box {
-      margin-top: 20px;
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      padding: 15px;
-      border-top: 1px solid #e5e7eb;
-    }
-    .perangkat-box img {
-      width: 60px;
-      height: auto;
-    }
-    .perangkat-content h3 {
-      margin: 0;
-      font-size: 1.1em;
-      color: #1e3a8a;
-    }
-    .perangkat-content p {
-      margin: 5px 0;
-    }
-    .button-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
+
+    .materi {
       margin-bottom: 40px;
     }
-    .nav-button {
-      background: #3b82f6;
+
+    .perangkat {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 15px 0;
+    }
+
+    .perangkat img {
+      max-width: 150px;
+      display: block;
+      margin-top: 10px;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .button-group button {
+      background-color: #3f88fb;
       color: white;
       border: none;
-      padding: 12px 24px;
+      padding: 10px 20px;
+      margin: 5px;
       font-size: 16px;
       border-radius: 8px;
       cursor: pointer;
     }
-    .nav-button:hover {
-      background: #1e40af;
-    }
-    .nav-button:disabled {
-      background: #9ca3af;
+
+    .button-group button:disabled {
+      background-color: #ccc;
       cursor: not-allowed;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      background-color: #388bff;
+      color: white;
+      padding: 15px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      justify-content: center;
+      position: relative;
+    }
+
+    .navbar .home-icon {
+      position: absolute;
+      left: 20px;
+      font-size: 24px;
+    }
+
+    .navbar .home-icon a {
+      color: white;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-
   <nav class="navbar">
-    <i class="fas fa-house navbar-brand" onclick="location.href='index.html'"></i>
-    <div class="title-text">A. Perangkat Keras - Hardware</div>
-  </nav>
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="" title="Kembali ke Materi satu">
+                <i class="fas fa-house"></i>
+            </a>
+            <div class="mx-auto title-text">Sistem Komputer</div>
+        </div>
+    </nav>
 
-  <section id="materi-container">
-    
-  </section>
+  <div class="container" id="materi-container">
+    Memuat materi...
+  </div>
 
-  <div class="button-container">
-    <button id="nextBtn" class="nav-button">Next Materi Selanjutnya</button>
-    <button id="soalBtn" class="nav-button">Lanjut ke Halaman Soal</button>
+  <div class="button-group">
+    <button id="nextBtn">Next Materi Selanjutnya</button>
+    <button onclick="window.location.href='halaman_soal.html'">Lanjut ke Halaman Soal</button>
   </div>
 
   <script>
@@ -112,39 +121,42 @@
 
     async function loadMateri(index) {
       const container = document.getElementById("materi-container");
-      container.innerHTML = '<p>Memuat materi...</p>';
-
+      container.innerHTML = "Memuat materi...";
+      
       try {
         const res = await fetch(files[index]);
-        if (!res.ok) throw new Error(`File ${files[index]} tidak ditemukan`);
+        if (!res.ok) throw new Error(`Gagal memuat ${files[index]}`);
         const data = await res.json();
-        const materi = data; 
-        const item = materi[index];
-        let html = `<h2>${item.judul}</h2><p>${item.deskripsi}</p>`;
 
-        if (item.perangkat) {
-          item.perangkat.forEach(p => {
-            html += `
-              <div class="perangkat-box">
+        let html = '';
+        data.forEach((materi) => {
+          html += `<div class="materi">
+            <h2>${materi.judul}</h2>
+            <p>${materi.deskripsi}</p>
+          `;
+
+          if (materi.perangkat) {
+            materi.perangkat.forEach(p => {
+              html += `<div class="perangkat">
+                <h3>${p.nama}</h3>
+                <p><strong>Fungsi:</strong> ${p.fungsi}</p>
+                <p>${p.penjelasan}</p>
                 ${p.gambar ? `<img src="${p.gambar}" alt="${p.nama}">` : ''}
-                <div class="perangkat-content">
-                  <h3>${p.nama}</h3>
-                  <p><strong>Fungsi:</strong> ${p.fungsi}</p>
-                  <p>${p.penjelasan}</p>
-                </div>
               </div>`;
-          });
-        }
+            });
+          }
+
+          html += `</div>`;
+        });
 
         container.innerHTML = html;
 
-        const nextBtn = document.getElementById("nextBtn");
         if (index >= files.length - 1) {
-          nextBtn.disabled = true;
-          nextBtn.innerText = "Semua Materi Selesai";
+          document.getElementById("nextBtn").disabled = true;
+          document.getElementById("nextBtn").innerText = "Materi Selesai";
         }
-      } catch (e) {
-        container.innerHTML = `<p style="color:red;">Error: ${e.message}</p>`;
+      } catch (err) {
+        container.innerHTML = `<p style="color:red;">${err.message}</p>`;
       }
     }
 
@@ -154,11 +166,11 @@
         loadMateri(currentIndex);
       }
     });
-    document.getElementById("soalBtn").addEventListener("click", () => {
-      window.location.href = 'soal_bab4.html';
-    });
-    window.addEventListener("DOMContentLoaded", () => loadMateri(currentIndex));
-  </script>
 
+    window.addEventListener("DOMContentLoaded", () => {
+      loadMateri(currentIndex);
+    });
+  </script>
 </body>
 </html>
+
