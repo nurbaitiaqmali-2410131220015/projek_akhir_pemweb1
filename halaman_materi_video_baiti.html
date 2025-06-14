@@ -44,12 +44,9 @@
     <section class="py-5">
         <div class="container p-4 rounded ">
             <div id="materiContainer">
-                <video width="100%" height="100%">
-                    <source src=".mp4" type="video/mp4">
-                </video>
+
             </div>
-            <p class="lead text-white">Ulasan Relasi<br>
-                Video ini membahas tentang ulasan mengenai mengenal algoritma</p>
+
             <div class="d-grid d-md-flex justify-content-md-end">
                 <a href="halaman_level_baiti.html" class="btn btn-primary me-md-2 btn-outline-light ">Lanjut Soal</a>
             </div>
@@ -59,9 +56,9 @@
 
     <script>
         const materiList = [
-            { mapel: 'algoritma', judul: 'Algoritma Dasar', videoUrl: 'https://www.youtube.com/embed/01jI2_8vuCA' },
-            { mapel: 'jaringan_komputer', judul: 'Jaringan Komputer', videoUrl: 'https://www.youtube.com/embed/7ulhe-tCuLs' },
-            { mapel: 'coding_dasar', judul: 'Coding Dasar', videoUrl: 'https://www.youtube.com/embed/VIDEO_ID_3' },
+            { mapel: 'algoritma', judul: 'Algoritma Dasar', videoUrl: 'https://www.youtube.com/embed/01jI2_8vuCA', deskripsi: 'Video ini membahas tentang ulasan mengenai mengenal algoritma' },
+            { mapel: 'jaringan_komputer', judul: 'Jaringan Komputer', videoUrl: 'https://www.youtube.com/embed/7ulhe-tCuLs', deskripsi: 'Video ini membahas struktur jaringan komputer, protokol, dan komunikasi data.' },
+            { mapel: 'coding_dasar', judul: 'Coding Dasar', videoUrl: 'https://www.youtube.com/embed/VIDEO_ID_3', deskripsi: 'Video ini membahas dasar-dasar pemrograman dan logika coding.' },
         ];
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -92,10 +89,14 @@
         <div class="ratio ratio-16x9 mb-3">
           <iframe src="${materi.videoUrl}" title="${materi.judul}" allowfullscreen></iframe>
         </div>
-      `;
+                <p class="lead text-white">${materi.deskripsi}</p>
+  `;
                 container.appendChild(div);
             });
         });
+
+
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
