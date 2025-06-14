@@ -37,17 +37,17 @@
         </div>
     </nav>
     <div class="d-flex justify-content-center align-items-center gap-3 py-2">
-        <button class="btn btn-outline-light px-1 bg-info">
+        <button id="prev-btn" class="btn btn-outline-light px-1 bg-info">
             <i class="bi bi-caret-left-fill fs-4"></i>
         </button>
-        <div class="btn bg-info text-white fw-bold px-4">Level 1</div>
-        <button class="btn btn-outline-light px-1 bg-info">
+        <div id="current-level" class="btn bg-info text-white fw-bold px-4">Level 1</div>
+        <button id="next-btn" class="btn btn-outline-light px-1 bg-info">
             <i class="bi bi-caret-right-fill fs-4"></i>
         </button>
     </div>
 
     <section id="materi" class="container mt-5">
-        <div class="row row-cols-1 row-cols-md-5 g-4 ">
+        <div class="row row-cols-2 row-cols-md-5 g-4 ">
             <div class="col">
                 <button class="btn btn-outline-light bg-info text-white w-50 py-3 level-btn"
                     data-level="1">1</button>
@@ -97,32 +97,67 @@
                     data-level="10">10</button>
 
             </div>
-            <div class="col">
-                <button class="btn btn-outline-light bg-info text-white w-50 py-3 level-btn"
-                    data-level="11">11</button>
-
-            </div>
-            <div class="col">
-                <button class="btn btn-outline-light bg-info text-white w-50 py-3 level-btn"
-                    data-level="12">12</button>
-
-            </div>
-            <div class="col">
-                <button class="btn btn-outline-light bg-info text-white w-50 py-3 level-btn"
-                    data-level="13">13</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-outline-light bg-info text-white w-50 py-3 level-btn"
-                    data-level="14">14</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-outline-light bg-info text-white w-50 py-3 level-btn"
-                    data-level="15">15</button>
-            </div>
         </div>
     </section>
 
+    <script>
+        const levelContainer = document.querySelector("#materi .row");
+        const currentLevelEl = document.getElementById("current-level");
+        const prevBtn = document.getElementById("prev-btn");
+        const nextBtn = document.getElementById("next-btn");
 
+        let pageIndex = parseInt(localStorage.getItem("pageIndex")) || 0; // halaman ke-0 berarti soal 1-10, halaman ke-1 berarti soal 11-20
+        const maxPages = 2;
+
+        function updateLevelDisplay() {
+            const start = pageIndex * 10 + 1;
+            const end = start + 9;
+            currentLevelEl.textContent = `Level ${pageIndex + 1}`;
+
+            levelContainer.innerHTML = "";
+
+            for (let i = 0; i < 10; i++) {
+                const soalNomor = pageIndex * 10 + i; 
+                const tampilNomor = soalNomor + 1;     
+
+                const col = document.createElement("div");
+                col.className = "col";
+
+                const btn = document.createElement("button");
+                btn.className = "btn btn-outline-light bg-info text-white w-100 py-3 level-btn";
+                btn.textContent = tampilNomor;
+                btn.dataset.index = soalNomor;
+
+                btn.addEventListener("click", () => {
+                    window.location.href = `halaman_soal_baiti.html?nomor=${soalNomor}`;
+                });
+
+                col.appendChild(btn);
+                levelContainer.appendChild(col);
+            }
+        }
+        prevBtn.addEventListener("click", () => {
+            if (pageIndex > 0) {
+                pageIndex--;
+                localStorage.setItem("pageIndex", pageIndex)
+                updateLevelDisplay();
+            }
+        });
+
+        nextBtn.addEventListener("click", () => {
+            if (pageIndex < maxPages - 1) {
+                pageIndex++;
+                localStorage.setItem("pageIndex", pageIndex)
+                updateLevelDisplay();
+            }
+        });
+
+        currentLevelEl.addEventListener("click", () => {
+            localStorage.setItem("pageIndex", pageIndex)
+            window.location.href = `halaman_soal_baiti.html?nomor=${pageIndex * 10}`;
+        });
+        updateLevelDisplay();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
