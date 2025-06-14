@@ -154,11 +154,19 @@
 
   <script>
     function selectOption(option) {
-      if (option === 'materi') {
-        window.location.href = 'materi.html';
-      } else if (option === 'video') {
-        window.location.href = 'halaman_materi_video_baiti.html';
+      const selectedMapel = localStorage.getItem('selectedSubject');
+
+      if (!selectedMapel) {
+        alert("Silakan pilih mapel terlebih dahulu.");
+        return;
       }
+      const mapelParam = selectedMapel.toLowerCase().replace(/ /g, '_');
+      if (option === 'materi') {
+        window.location.href = `materi.html?mapel=${mapelParam}`;
+      } else if (option === 'video') {
+        window.location.href = `halaman_materi_video_baiti.html?mapel=${mapelParam}`;
+      }
+      
     }
 
     const starsContainer = document.querySelector('.stars');
@@ -170,18 +178,7 @@
       star.style.animationDelay = `${Math.random() * 2}s`;
       starsContainer.appendChild(star);
 
-      const selectedMapel = localStorage.getItem('selectedSubject')?.toLowerCase().replace(' ', '_');
-
-      if (!selectedMapel) {
-        alert("Silakan pilih mapel terlebih dahulu.");
-        return;
-      }
-
-      if (option === 'materi') {
-        window.location.href = `materi.html?mapel=${selectedMapel}`;
-      } else if (option === 'video') {
-        window.location.href = `halaman_materi_video_baiti.html?mapel=${selectedMapel}`;
-      }
+      
     }
 
   </script>

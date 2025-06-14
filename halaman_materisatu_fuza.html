@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Materi Informatika</title>
   <style>
     body {
@@ -26,7 +27,7 @@
       margin: 30px auto;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
@@ -96,15 +97,16 @@
     }
   </style>
 </head>
+
 <body>
   <nav class="navbar">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <a class="navbar-brand" href="" title="Kembali ke Materi satu">
-                <i class="fas fa-house"></i>
-            </a>
-            <div class="mx-auto title-text">Sistem Komputer</div>
-        </div>
-    </nav>
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="" title="Kembali ke Materi satu">
+        <i class="fas fa-house"></i>
+      </a>
+      <div class="mx-auto title-text">Sistem Komputer</div>
+    </div>
+  </nav>
 
   <div class="container" id="materi-container">
     Memuat materi...
@@ -122,7 +124,7 @@
     async function loadMateri(index) {
       const container = document.getElementById("materi-container");
       container.innerHTML = "Memuat materi...";
-      
+
       try {
         const res = await fetch(files[index]);
         if (!res.ok) throw new Error(`Gagal memuat ${files[index]}`);
@@ -132,21 +134,82 @@
         data.forEach((materi) => {
           html += `<div class="materi">
             <h2>${materi.judul}</h2>
-            <p>${materi.deskripsi}</p>
-          `;
+            <p>${materi.deskripsi || ""}</p>`;
 
           if (materi.perangkat) {
             materi.perangkat.forEach(p => {
               html += `<div class="perangkat">
                 <h3>${p.nama}</h3>
-                <p><strong>Fungsi:</strong> ${p.fungsi}</p>
-                <p>${p.penjelasan}</p>
+                <p><strong>Fungsi:</strong> ${p.fungsi || ''}</p>
+                <p>${p.penjelasan || ''}</p>
                 ${p.gambar ? `<img src="${p.gambar}" alt="${p.nama}">` : ''}
               </div>`;
             });
           }
 
-          html += `</div>`;
+          if (materi.gambar_aplikasi) {
+            materi.gambar_aplikasi.forEach(g => {
+              html += `<div class="perangkat">
+                <h3>${g.nama}</h3>
+                <p>${g.keterangan || ''}</p>
+                ${g.gambar ? `<img src="${g.gambar}" alt="${g.nama}">` : ''}
+              </div>`;
+            });
+          }
+
+          if (materi.contoh && materi.contoh.gambar) {
+            html += `<div class="perangkat">
+              <h3>${materi.contoh.judul || ''}</h3>
+              <p>${materi.contoh.penjelasan || ''}</p>
+              <img src="${materi.contoh.gambar}" alt="${materi.contoh.judul}">
+            </div>`;
+          }
+
+          if (materi.jenis_software_berdasarkan_sumber) {
+            materi.jenis_software_berdasarkan_sumber.forEach(js => {
+              html += `<div class="perangkat">
+                <h3>${js.nama}</h3>
+                <p>${js.penjelasan}</p>
+                <p><strong>Contoh:</strong> ${js.contoh.join(', ')}</p>
+              </div>`;
+            });
+          }
+
+          if (materi.teknologi) {
+            html += `<div class="perangkat">
+              <h3>${materi.teknologi.nama}</h3>
+              <p>${materi.teknologi.definisi}</p>
+              <ul>
+                ${materi.teknologi.fungsi.map(f => `<li>${f}</li>`).join('')}
+              </ul>
+            </div>`;
+          }
+
+          if (materi.gambar && materi.gambar.file) {
+            html += `<div class="perangkat">
+              <h3>${materi.gambar.nama}</h3>
+              <img src="${materi.gambar.file}" alt="${materi.gambar.nama}">
+            </div>`;
+          }
+
+          if (materi.penjelasan) {
+            html += `<p>${materi.penjelasan}</p>`;
+          }
+
+          if (materi.konten && Array.isArray(materi.konten)) {
+            materi.konten.forEach(item => {
+              if (typeof item === 'string') {
+                html += `<p>${item}</p>`;
+              } else if (typeof item === 'object' && item.gambar) {
+                html += `<div class="perangkat">
+                  <img src="${item.gambar}" alt="${item.keterangan || ''}">
+                  <p>${item.keterangan || ''}</p>
+                </div>`;
+              }
+            });
+          }
+
+          html += `</div>`; 
         });
 
         container.innerHTML = html;
@@ -172,5 +235,5 @@
     });
   </script>
 </body>
-</html>
 
+</html>
