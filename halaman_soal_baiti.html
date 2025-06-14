@@ -53,7 +53,8 @@
 
         const nomor = parseInt(getQueryParameter('nomor')) || 0;
         const namaFile = getQueryParameter('file') || 'soal';
-        fetch(`path/to/json/${namaFile}.json`)
+        console.log("Memuat file JSON:", `json/${namaFile}.json`);
+        fetch(`json/${namaFile}.json`)
             .then(response => response.json())
             .then(data => {
                 tampilkanSoal(data, nomor);

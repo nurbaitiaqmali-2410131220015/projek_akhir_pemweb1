@@ -107,7 +107,8 @@
             currentLevelEl.textContent = `Level ${pageIndex + 1}`;
 
             levelContainer.innerHTML = "";
-            const mapel = localStorage.getItem("selectedMapel") || "algoritma";
+            const mapelRaw = localStorage.getItem("selectedSubject") || "ALGORITMA";
+            const mapel = mapelRaw.toLowerCase().replace(/\s+/g, '_');
             for (let i = 0; i < 10; i++) {
                 const soalNomor = pageIndex * 10 + i;
                 const tampilNomor = soalNomor + 1;
