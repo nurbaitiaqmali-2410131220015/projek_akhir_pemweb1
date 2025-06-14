@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8" />
@@ -8,55 +8,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         :root {
-            --navbar-blue: #87a7ff;
+            --navbar-blue: #007BFF;
             --soft-blue: #78b3fa;
             --light-blue: #dbeafe;
-            --text-white: #f8fafc;
+            --text-white: #ffffff;
             --gray-light: #e5e7eb;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #dbeafe, #f0f9ff);
-            min-height: 100vh;
             margin: 0;
-            padding: 20px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            font-family: 'Comic Neue', sans-serif;
+            overflow-x: hidden;
         }
 
-        .header-container {
+        .navbar {
+            background-color: #58b1f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            background-color: var(--navbar-blue);
-            padding: 10px 20px;
-            border-radius: 8px;
-            color: var(--text-white);
-            max-width: 1200px;
-            margin: 0 auto 25px auto;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            height: 50px;
+            padding: 15px 0;
         }
 
         .home-icon {
-            font-size: 1.3rem;
-            color: var(--text-white);
-            cursor: pointer;
-            transition: transform 0.2s;
             position: absolute;
             left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+            font-size: 1.8em;
+            color: white;
+            text-decoration: none;
         }
 
         .home-icon:hover {
-            transform: translateY(-50%) scale(1.1);
+            color: #dceeff;
         }
 
-        .page-title {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 1.3rem;
-            font-weight: 600;
+        .navbar-title {
+            font-size: 1.5em;
+            font-weight: bold;
             color: var(--text-white);
             margin: 0;
         }
@@ -147,16 +136,14 @@
 </head>
 
 <body>
-    <div class="header-container">
-        <i class="fas fa-home home-icon"></i>
-        <h1 class="page-title">MATA PELAJARAN</h1>
+    <div class="navbar">
+        <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a>
+        <h1 class="navbar-title">MATA PELAJARAN</h1>
     </div>
 
     <div class="subjects-container">
         <div class="subject-card">
-            <div class="subject-icon">
-                <i class="fas fa-project-diagram"></i>
-            </div>
+            <div class="subject-icon"><i class="fas fa-project-diagram"></i></div>
             <div class="subject-title">ALGORITMA</div>
             <p class="subject-desc">Pelajari dasar-dasar algoritma dan teknik pemecahan masalah yang sistematis</p>
             <a href="halaman_belajar_fuza.html" class="continue-btn" id="algoritmaBtn">Klik untuk lanjut</a>
@@ -164,9 +151,7 @@
         </div>
 
         <div class="subject-card">
-            <div class="subject-icon">
-                <i class="fas fa-network-wired"></i>
-            </div>
+            <div class="subject-icon"><i class="fas fa-network-wired"></i></div>
             <div class="subject-title">JARINGAN KOMPUTER</div>
             <p class="subject-desc">Memahami arsitektur jaringan, protokol komunikasi, dan infrastruktur IT</p>
             <a href="halaman_belajar_fuza.html" class="continue-btn" id="jaringanBtn">Klik untuk lanjut</a>
@@ -174,9 +159,7 @@
         </div>
 
         <div class="subject-card">
-            <div class="subject-icon">
-                <i class="fas fa-code"></i>
-            </div>
+            <div class="subject-icon"><i class="fas fa-code"></i></div>
             <div class="subject-title">CODING DASAR</div>
             <p class="subject-desc">Mulai perjalanan pemrograman dengan konsep dasar dan logika coding</p>
             <a href="halaman_belajar_fuza.html" class="continue-btn" id="codingBtn">Klik untuk lanjut</a>
@@ -185,7 +168,6 @@
     </div>
 
     <script>
-        // Simpan pilihan ke localStorage tanpa delay
         document.getElementById('algoritmaBtn').addEventListener('click', function () {
             localStorage.setItem('selectedSubject', 'ALGORITMA');
         });
