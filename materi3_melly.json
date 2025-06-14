@@ -1,0 +1,14 @@
+{
+  "judul": "Proteksi Data dan File",
+  "sub_judul": [
+    {
+      "judul": "Cara Kerja Enkripsi",
+      "penjelasan": "Enkripsi adalah proses mengamankan data dengan mengubah informasi asli menjadi bentuk kode yang tidak bisa dimengerti tanpa kunci khusus. Proses ini menggunakan algoritma dan kunci enkripsi untuk mengacak data sehingga hanya pihak yang memiliki kunci tersebut yang dapat mengembalikannya ke bentuk semula. Dengan cara ini, enkripsi melindungi data dari akses atau pencurian oleh pihak yang tidak berwenang."
+    },
+    {
+      "judul": "Caesar's Cipher",
+      "penjelasan": "Caesar's Cipher adalah salah satu teknik enkripsi paling sederhana dan tertua yang dikenal dalam sejarah kriptografi. Dinamai menurut Julius Caesar, pemimpin Romawi yang menggunakan metode ini untuk mengirim pesan rahasia kepada tentaranya agar tidak mudah dibaca oleh musuh.",
+      "cara kerja": "Prinsip dasar Caesar's Cipher adalah menggeser setiap huruf dalam pesan asli (plaintext) sebanyak sejumlah posisi tertentu dalam alfabet. Pergeseran ini disebut key atau shift. Contohnya, jika kunci pergeseran adalah 3, maka huruf A menjadi D, B menjadi E, dan seterusnya. Jika pergeseran melewati huruf Z, perhitungan dilanjutkan dari huruf A kembali (rotasi alfabet)."
+    }
+  ]
+}
