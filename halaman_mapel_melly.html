@@ -146,7 +146,7 @@
             <div class="subject-icon"><i class="fas fa-project-diagram"></i></div>
             <div class="subject-title">ALGORITMA</div>
             <p class="subject-desc">Pelajari dasar-dasar algoritma dan teknik pemecahan masalah yang sistematis</p>
-            <a href="halaman_belajar_fuza.html" class="continue-btn" id="algoritmaBtn">Klik untuk lanjut</a>
+            <a href="#" class="continue-btn" id="algoritmaBtn">Klik untuk lanjut</a>
             <div class="card-decoration"></div>
         </div>
 
@@ -154,7 +154,7 @@
             <div class="subject-icon"><i class="fas fa-network-wired"></i></div>
             <div class="subject-title">JARINGAN KOMPUTER</div>
             <p class="subject-desc">Memahami arsitektur jaringan, protokol komunikasi, dan infrastruktur IT</p>
-            <a href="halaman_belajar_fuza.html" class="continue-btn" id="jaringanBtn">Klik untuk lanjut</a>
+            <a href="#" class="continue-btn" id="jaringanBtn">Klik untuk lanjut</a>
             <div class="card-decoration"></div>
         </div>
 
@@ -162,23 +162,30 @@
             <div class="subject-icon"><i class="fas fa-code"></i></div>
             <div class="subject-title">CODING DASAR</div>
             <p class="subject-desc">Mulai perjalanan pemrograman dengan konsep dasar dan logika coding</p>
-            <a href="halaman_belajar_fuza.html" class="continue-btn" id="codingBtn">Klik untuk lanjut</a>
+            <a href="#" class="continue-btn" id="codingBtn">Klik untuk lanjut</a>
             <div class="card-decoration"></div>
         </div>
     </div>
 
     <script>
-        document.getElementById('algoritmaBtn').addEventListener('click', function () {
+        document.getElementById('algoritmaBtn').addEventListener('click', function (e) {
+            e.preventDefault();
             localStorage.setItem('selectedSubject', 'ALGORITMA');
+            window.location.href = 'halaman_belajar_fuza.html';
         });
 
-        document.getElementById('jaringanBtn').addEventListener('click', function () {
+        document.getElementById('jaringanBtn').addEventListener('click', function (e) {
+            e.preventDefault();
             localStorage.setItem('selectedSubject', 'JARINGAN KOMPUTER');
+            window.location.href = 'halaman_belajar_fuza.html';
         });
 
-        document.getElementById('codingBtn').addEventListener('click', function () {
+        document.getElementById('codingBtn').addEventListener('click', function (e) {
+            e.preventDefault();
             localStorage.setItem('selectedSubject', 'CODING DASAR');
+            window.location.href = 'halaman_belajar_fuza.html';
         });
+
     </script>
 </body>
 
