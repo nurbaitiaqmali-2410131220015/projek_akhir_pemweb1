@@ -169,9 +169,7 @@
       star.style.left = `${Math.random() * 100}%`;
       star.style.animationDelay = `${Math.random() * 2}s`;
       starsContainer.appendChild(star);
-    }
 
-    function selectOption(option) {
       const selectedMapel = localStorage.getItem('selectedSubject')?.toLowerCase().replace(' ', '_');
 
       if (!selectedMapel) {
