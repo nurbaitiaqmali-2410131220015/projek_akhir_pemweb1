@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materi</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background: #dbeafe; color: #1f2937;
+    }
+    nav.navbar {
+      background: #3b82f6; padding: 10px 20px; height: 60px; position: relative;
+    }
+    .navbar-brand { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); }
+    .navbar-brand i { font-size: 1.8em; color: white; }
+    .title-text {
+      position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%);
+      text-align: center; font-size: 1.2em; font-weight: bold; color: white;
+    }
+    section.materi-section {
+      background: #fff; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px; margin: 20px auto; width: 90%; max-width: 900px;
+    }
+    h2 { color: #1e40af; margin-top: 0; }
+    .button-container { text-align: center; margin: 30px auto; }
+    .nav-button:hover { background: #1e40af; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="#"><i class="fas fa-house"></i></a>
+    <div class="title-text">Sistem Komputer</div>
+  </nav>
+
+  <section id="materi-container" class="materi-section">
+    <p>Memuat materi...</p>
+  </section>
+
+  <div class="button-container">
+    <button id="nextBtn" class="nav-button">Next Materi Selanjutnya</button>
+    <button class="nav-button" onclick="window.location.href='soal_bab4.html'">Lanjut ke Halaman Soal</button>
+  </div>
+
+  <script>
+    const files = ["mater_fuza.json", "materi2_fuza.json", "materi3_fuza.json"];
+    let currentIndex = 0;
+
+    async function loadMateri(index) {
+      const container = document.getElementById("materi-container");
+      try {
+        const res = await fetch(files[index]);
+        if (!res.ok) throw new Error(`File ${files[index]} tidak ditemukan`);
+        const data = await res.json();
+        container.innerHTML = `
+          <h2>${data.judul || "Tanpa Judul"}</h2>
+          <p>${data.deskripsi || ""}</p>
+        `;
+      } catch (e) {
+        console.error(e);
+        container.innerHTML = `<p style="color:red;">Error: ${e.message}</p>`;
+      }
+      document.getElementById("nextBtn").disabled = index >= files.length - 1;
+      if (index >= files.length - 1) {
+        document.getElementById("nextBtn").innerText = "Semua Materi Selesai";
+      }
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      currentIndex++;
+      loadMateri(currentIndex);
+    });
+
+    window.addEventListener("DOMContentLoaded", () => loadMateri(currentIndex));
+  </script>
+</body>
+</html>
+
