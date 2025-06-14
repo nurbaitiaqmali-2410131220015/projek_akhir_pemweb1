@@ -107,7 +107,7 @@
             currentLevelEl.textContent = `Level ${pageIndex + 1}`;
 
             levelContainer.innerHTML = "";
-
+            const mapel = localStorage.getItem("selectedMapel") || "algoritma";
             for (let i = 0; i < 10; i++) {
                 const soalNomor = pageIndex * 10 + i;
                 const tampilNomor = soalNomor + 1;
@@ -121,9 +121,8 @@
                 btn.dataset.index = soalNomor;
 
                 btn.addEventListener("click", function () {
-                    const soalNomor = btn.dataset.index; 
-                    const mapel = localStorage.getItem("selectedMapel") || 'algoritma';
-                    window.location.href = `halaman_soal_baiti.html?nomor=${soalNomor}&mapel=${mapel}`;
+                    const soalNomor = btn.dataset.index;
+                    window.location.href = `halaman_soal_baiti.html?nomor=${soalNomor}&file=${mapel}`;
                 });
 
 
