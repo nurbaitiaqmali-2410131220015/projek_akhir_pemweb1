@@ -24,7 +24,7 @@
         "jawaban":"A"
     },
     {
-        "soal":"4.Untuk memulai proyeke baru di scracth kita klik menu",
+        "soal":"4.Untuk memulai proyek baru di Scratch, kita klik menu",
         "pilihan_a":"File",
         "pilihan_b":"Home",
         "pilihan_c":"Load",
@@ -72,7 +72,7 @@
         "jawaban":"D"
     },
     {
-        "soal":"10.scratch adalah...",
+        "soal":"10.Scratch adalah...",
         "pilihan_a":"Pemrograman visual berbasis blok",
         "pilihan_b":"Bahasa pemrograman berbasis teks",
         "pilihan_c":"Sistem oprasi komputer",
@@ -107,7 +107,7 @@
         "soal":"14.Blok “wait 1 seconds” digunakan untuk...",
         "pilihan_a":"Mempercepat sprite",
         "pilihan_b":"Menghapus sprite",
-        "pilihan_c":"Mematikan suara",
+        "pilihan_c":"Menunggu selama 1 detik",
         "pilihan_d":"Memberhentikan sprite selamanya",
         "jawaban":"C"
     },
