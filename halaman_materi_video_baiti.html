@@ -35,7 +35,7 @@
                     class="bi bi-house bg-light text-dark rounded-circle d-flex align-items-center justify-content-center"
                     style="width: 40px; height: 40px;"></i> </a>
             <div class="position-absolute start-50 translate-middle-x">
-                <span class="text-white fw-bold h5">Algoritma</span>
+                <span id="judulMapel" class="text-white fw-bold h5">Judul Mapel</span>
             </div>
 
 
@@ -43,9 +43,11 @@
     </nav>
     <section class="py-5">
         <div class="container p-4 rounded ">
-            <video width="100%" height="100%">
-                <source src=".mp4" type="video/mp4">
-            </video>
+            <div id="materiContainer">
+                <video width="100%" height="100%">
+                    <source src=".mp4" type="video/mp4">
+                </video>
+            </div>
             <p class="lead text-white">Ulasan Relasi<br>
                 Video ini membahas tentang ulasan mengenai mengenal algoritma</p>
             <div class="d-grid d-md-flex justify-content-md-end">
@@ -57,31 +59,59 @@
 
     <script>
         const materiList = [
-            { mapel: 'algoritma', judul: 'Algoritma Dasar', videoUrl: 'https://www.youtube.com/embed/01jI2_8vuCA' },
-            { mapel: 'jaringan_komputer', judul: 'Jaringan Komputer', videoUrl: 'https://youtu.be/7ulhe-tCuLs?si=AdWt8wCnSDYs6yaR' },
-            { mapel: 'coding_dasar', judul: 'Coding Dasar', videoUrl: 'https://www.youtube.com/embed/VIDEO_ID_3' },
+            { mapel: 'algoritma', judul: 'Algoritma Dasar', videoUrl: 'https://www.youtube.com/embed/01jI2_8vuCA', deskripsi: 'Video ini membahas tentang ulasan mengenai mengenal algoritma' },
+            { mapel: 'jaringan_komputer', judul: 'Jaringan Komputer', videoUrl: 'https://www.youtube.com/embed/7ulhe-tCuLs', deskripsi: 'Video ini membahas struktur jaringan komputer, protokol, dan komunikasi data.' },
+            { mapel: 'coding_dasar', judul: 'Coding Dasar', videoUrl: 'https://www.youtube.com/embed/VIDEO_ID_3', deskripsi: 'Video ini membahas dasar-dasar pemrograman dan logika coding.' },
         ];
 
         const urlParams = new URLSearchParams(window.location.search);
         const mapelTerpilih = urlParams.get('mapel');
 
-        const materiUntukDitampilkan = mapelTerpilih
-            ? materiList.filter(m => m.mapel === mapelTerpilih)
-            : materiList;
+        if (mapelTerpilih) {
+            localStorage.setItem('selectedMapel', mapelTerpilih);
+        }
 
-        const container = document.getElementById('materiContainer');
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('materiContainer');
+
+
+            const judul = document.getElementById('judulMapel');
+            if (judul) {
+                judul.textContent = mapelTerpilih?.replace('_', ' ').toUpperCase() || 'Semua Materi';
+            }
+
+            const materiUntukDitampilkan = mapelTerpilih
+                ? materiList.filter(m => m.mapel === mapelTerpilih)
+                : materiList;
+
+            materiUntukDitampilkan.forEach(materi => {
+                const div = document.createElement('div');
+                div.classList.add('mb-4');
+                div.innerHTML = `
+        <h3 class="text-white">${materi.judul}</h3>
+        <div class="ratio ratio-16x9 mb-3">
+          <iframe src="${materi.videoUrl}" title="${materi.judul}" allowfullscreen></iframe>
+        </div>
+      `;
+                container.appendChild(div);
+            });
+        });
+
         materiUntukDitampilkan.forEach(materi => {
             const div = document.createElement('div');
+            div.classList.add('mb-4');
             div.innerHTML = `
-    <h3>${materi.judul}</h3>
-    <div class="ratio ratio-16x9">
+    <h3 class="text-white">${materi.judul}</h3>
+    <div class="ratio ratio-16x9 mb-3">
       <iframe src="${materi.videoUrl}" title="${materi.judul}" allowfullscreen></iframe>
     </div>
+    <p class="lead text-white">${materi.deskripsi}</p>
   `;
             container.appendChild(div);
         });
 
     </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
