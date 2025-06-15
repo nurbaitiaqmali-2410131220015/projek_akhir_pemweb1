@@ -169,25 +169,28 @@
     </div>
 
     <script>
+        function pilihMapel(mapel) {
+            localStorage.setItem('selectedSubject', mapel);
+            window.location.href = 'halaman_belajar_fuza.html';
+        }
+
         document.getElementById('algoritmaBtn').addEventListener('click', function (e) {
             e.preventDefault();
-            localStorage.setItem('selectedSubject', 'ALGORITMA');
-            window.location.href = 'halaman_belajar_fuza.html';
+            pilihMapel('ALGORITMA');
         });
 
         document.getElementById('jaringanBtn').addEventListener('click', function (e) {
             e.preventDefault();
-            localStorage.setItem('selectedSubject', 'JARINGAN KOMPUTER');
-            window.location.href = 'halaman_belajar_fuza.html';
+            pilihMapel('JARINGAN KOMPUTER');
         });
 
         document.getElementById('codingBtn').addEventListener('click', function (e) {
             e.preventDefault();
-            localStorage.setItem('selectedSubject', 'SISTEM KOMPUTER');
-            window.location.href = 'halaman_belajar_fuza.html';
+            pilihMapel('SISTEM KOMPUTER');
         });
 
     </script>
+
 </body>
 
 </html>

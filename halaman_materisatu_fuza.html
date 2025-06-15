@@ -114,11 +114,18 @@
 
   <div class="button-group">
     <button id="nextBtn">Next Materi Selanjutnya</button>
-    <button onclick="window.location.href='halaman_soal.html'">Lanjut ke Halaman Soal</button>
+    <button onclick="window.location.href='halaman_soal_baiti.html'">Lanjut ke Halaman Soal</button>
   </div>
 
   <script>
-    const files = ["mater_fuza.json", "materi2_fuza.json", "materi3_fuza.json"];
+    const params = new URLSearchParams(window.location.search);
+    const mapel = params.get("mapel");
+    const mapelToFiles = {
+      sistem_komputer: ["mater_fuza.json", "materi2_fuza.json", "materi3_fuza.json"],
+      
+    };
+
+    const files = mapelToFiles[mapel] || [];
     let currentIndex = 0;
 
     async function loadMateri(index) {
@@ -209,7 +216,7 @@
             });
           }
 
-          html += `</div>`; 
+          html += `</div>`;
         });
 
         container.innerHTML = html;
@@ -231,6 +238,10 @@
     });
 
     window.addEventListener("DOMContentLoaded", () => {
+      const titleText = document.querySelector('.title-text');
+      if (titleText && mapel) {
+        titleText.innerText = mapel.replace(/_/g, ' ').toUpperCase();
+      }
       loadMateri(currentIndex);
     });
   </script>
