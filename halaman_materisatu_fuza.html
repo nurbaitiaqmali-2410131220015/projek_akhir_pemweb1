@@ -99,12 +99,15 @@
 </head>
 
 <body>
-  <nav class="navbar">
+  <nav class="navbar" style="background-color: #58b1f5;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
-      <a class="navbar-brand" href="" title="Kembali ke Materi satu">
-        <i class="fas fa-house"></i>
+      <a class="navbar-brand" href="halaman_materisatu_fuza.html" title="Kembali ke Materi satu">
+        <i class="fas fa-house text-white" style="font-size: 1.8rem;"></i>
       </a>
-      <div class="mx-auto title-text">Sistem Komputer</div>
+      <div class="mx-auto text-white fw-bold fs-5" style="position: absolute; left: 50%; transform: translateX(-50%);">
+        Sistem Komputer
+      </div>
+      <div style="width: 1.8rem;"></div>
     </div>
   </nav>
 
@@ -122,7 +125,7 @@
     const mapel = params.get("mapel");
     const mapelToFiles = {
       sistem_komputer: ["mater_fuza.json", "materi2_fuza.json", "materi3_fuza.json"],
-      
+
     };
 
     const files = mapelToFiles[mapel] || [];
