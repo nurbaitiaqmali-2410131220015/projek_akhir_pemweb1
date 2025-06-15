@@ -53,6 +53,10 @@
 
         const nomor = parseInt(getQueryParameter('nomor')) || 0;
         const namaFile = getQueryParameter('file') || 'soal';
+
+        let skor = 0;
+        const totalSoal = 5;
+        const waktuMulai = new Date();
         console.log("Memuat file JSON:", `json/${namaFile}.json`);
         fetch(`json/${namaFile}.json`)
             .then(response => response.json())
@@ -101,6 +105,9 @@
                     const jawabanUser = this.getAttribute('data-jawaban');
                     const jawabanBenar = soal.jawaban.toLowerCase();
 
+                    if (jawabanUser === jawabanBenar) {
+                        skor++;
+                    }
                     tombolJawaban.forEach(b => {
                         b.disabled = true;
 
@@ -114,6 +121,21 @@
                             b.classList.add('btn-danger'); // merah
                         }
                     });
+                    setTimeout(() => {
+                        if (nomor + 1 < data.length) {
+                            
+                            window.location.href = `halaman_soal_baiti.html?nomor=${nomor + 1}&file=${namaFile}&skor=${skor}`;
+                        } else {
+                            
+                            const waktuSelesai = new Date();
+                            const selisih = Math.floor((waktuSelesai - waktuMulai) / 1000); 
+                            const menit = Math.floor(selisih / 60);
+                            const detik = selisih % 60;
+                            const waktuFormatted = `${menit.toString().padStart(2, '0')}.${detik.toString().padStart(2, '0')}`;
+
+                            window.location.href = `halaman_nilai_melly.html?nilai=${skor * 20}&waktu=${waktuFormatted}`;
+                        }
+                    }, 1000);
                 });
             });
         }
