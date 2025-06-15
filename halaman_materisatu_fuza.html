@@ -51,11 +51,12 @@
       border-radius: 8px;
     }
 
-    .perangkat img {
+    .perangkat img:not(.gambar) {
       max-width: 150px;
       display: block;
       margin-top: 10px;
     }
+
 
     .button-group {
       text-align: center;
@@ -101,9 +102,9 @@
       text-decoration: none;
     }
 
-    .gambar{
-      width: 900%;
-      max-width: 700px;
+    .gambar {
+      width: 100% !important;
+      max-width: 700px !important;
       display: block;
       margin: 10px auto;
       border-radius: 8px;

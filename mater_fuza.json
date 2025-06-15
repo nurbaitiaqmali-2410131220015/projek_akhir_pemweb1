@@ -4,37 +4,37 @@
         "deskripsi": "Peranti masukan adalah perangkat yang mengirimkan data ke komputer untuk diolah, seperti:",
         "perangkat": [
             {
-                "nama": "Mouse wireless Bluetooth",
+                "nama": "A.Mouse wireless Bluetooth",
                 "gambar": "gambar1.png",
                 "fungsi": "Menggerakkan kursor dan memilih menu.",
                 "penjelasan": "Mouse atau tetikus digunakan untuk menggerakkan dan mengatur posisi kursor di layar komputer.Pengoperasian mouse dapat dengan beberapa cara.Tunjuk (Point), posisikan: Mouse akan menunjuk ke suatu objek antarmuka di layar komputer.Klik kiri (Left Click): Menekan tombol mouse sekali dan segera melepaskannya. Klik ganda (Double Click): Menekan tombol mouse dua kali berurutan dengan cepat tanpa menggeser mouse. Klik kanan (Right Click): Klik kanan dapat dilakukan satu kali untuk menampilkan menu tertentu.Seret (Drag): Digunakan untuk memindahkan suatu objek antarmuka seperti gambar, icon, teks, dan sebagainya. Caranya dengan menunjuk objek yang akan dipindah sambil menekan tombol kiri mouse, lalu geser mouse sesuai yang dikehendaki.Setelah sampai pada bagian yang dikehendaki tombol mouse dilepas"
             },
             {
-                "nama": "QWERTY Keyboard",
+                "nama": "B.QWERTY Keyboard",
                 "gambar": "keyboard.png",
                 "fungsi": "Mengetik teks dan simbol.",
                 "penjelasan": "Keyboard QWERTY, yaitu keyboard dengan tata letak paling populer yang didasarkan pada enam huruf pertama pada papan ketik mesin tik. Desain QWERTY dibuat agar huruf yang paling umum tidak akan membuat mesintik mekanis “macet”, atau berhenti bekerja."
             },
             {
-                "nama": "Photo Scanner",
+                "nama": "C.Photo Scanner",
                 "gambar": "scanner.png",
                 "fungsi": "Memindai dokumen ke format digital.",
                 "penjelasan": "Scanner digunakan untuk memindai dan menyalin Data dari kertas berisi grafik, gambar, foto, atau tulisan menggunakan alat pembaca optical data reader. Cara kerja scanner adalah dengan menempatkan sebuah obyek di atas kaca scanner,yang kemudian akan dibaca oleh optical data reader"
             },
             {
-                "nama": "Joystick",
+                "nama": "D.Joystick",
                 "gambar": "joystick.png",
                 "fungsi": "Mengontrol permainan.",
                 "penjelasan": "Joystick digunakan sebagai pelengkap untuk memainkan permainan/game video yang menggunakan lebih dari satu tombol. Joystick digunakan untuk menggerakan kursor pada layar permainan. Elemen-elemen joystick adalah:1. Stick/tuas, 2. Base/alas, 3. Trigger/Pemicu, 4. Tombol ekstra, 5. Sakelar autofire, 6. Sakelar throttle, 7. Sakelar tapi (POV hat), 8. Cangkir penyedot"
             },
             {
-                "nama": "Microphone",
+                "nama": "E.Microphone",
                 "gambar": "mic.png",
                 "fungsi": "Merekam suara.",
                 "penjelasan": " Microphone adalah peranti yang mengonversi suara menjadi sinyal elektrik. Peranti ini digunakan untuk memasukkan suara ke komputer.Suara tersebut dapat direkam sebagai perintah untuk komputer, atau diteruskan melalui media komunikasi antarkomputer."
             },
             {
-                "nama": "Barcode Reader",
+                "nama": "F.Barcode Reader",
                 "gambar": "bercode.png",
                 "fungsi": "Membaca kode batang produk.",
                 "penjelasan": "Barcode reader adalah pemindai optis yang dapat membaca barcode yang tercetak, mengubah kode bar tersebut menjadi data elektrik dan mengirimkannya ke komputer dengan format data yang sederhana."
@@ -46,19 +46,19 @@
         "deskripsi": "Data atau perintah yang diterima dari peranti masukan selanjutnya akan diproses oleh komputer. Pemroses ini terdiri atas banyak komponen, yaituseperti berikut.",
         "perangkat": [
             {
-                "nama": "CPU",
+                "nama": "A.CPU",
                 "gambar": "prosesor.png",
                 "fungsi": "Pusat kendali dan perhitungan komputer (CU & ALU).",
                 "penjelasan": "CPU adalah otak komputer yang bertugas menjalankan semua instruksi, seperti operasi aritmatika, logika, pengendalian, dan input/output dasar.Komponen utama CPU: Control Unit (CU): Mengatur dan mengendalikan jalannya instruksi.Arithmetic Logic Unit (ALU): Menjalankan perhitungan dan operasi logika.Register: Menyimpan data sementara yang sedang diproses.CPU terpasang di mainboard (motherboard) dan terhubung dengan perangkat lain seperti memori utama, alat input/output, dan GPU (untuk grafis).Kecepatan CPU diukur dalam satuan Hertz (Hz), umumnya dalam skala MHz atau GHz."
             },
             {
-                "nama": "RAM",
+                "nama": "B.RAM",
                 "gambar": "ram.png",
                 "fungsi": "Menyimpan data sementara.",
                 "penjelasan": "RAM (Random Access Memory) adalah memori cepat yang menyimpan data sementara saat komputer memproses informasi. Data dari penyimpanan sekunder akan dimuat ke RAM agar bisa diolah CPU lebih cepat. file tersebut dimuat dan dimanipulasi di RAM.RAM memungkinkan akses data secara acak, tanpa urutan tertentu. Karena menggunakan arus listrik dan transistor, RAM memiliki latensi rendah, tetapi data akan hilang saat listrik mati."
             },
             {
-                "nama": "ROM",
+                "nama": "C.ROM",
                 "gambar": "rom.png",
                 "fungsi": "Menyimpan instruksi permanen BIOS.",
                 "penjelasan": "ROM adalah memori pada komputer yang digunakan untuk menyimpan instruksi yang ditulis oleh produsen komputer untuk proses booting, instruksi yang disimpan oleh ROM disebut firmware. Data yang pernah ditulis di ROM tidak dapat dihapus. Instruksi ROM dijalankan secara otomatis saat komputer menyala. Pada komputer,ROM bisa berisi sistem operasi kecil yang disebut Basic Input Output System (BIOS)"
@@ -70,19 +70,19 @@
         "deskripsi": "Peranti keluaran adalah peralatan yang menyajikan informasi dari komputer yang bisa berupa tampilan di layar monitor, gambar tercetak, suara yang  dihasilkan oleh speaker, dan lainnya. Peranti keluaran di antaranya adalah sebagai berikut.",
         "perangkat": [
             {
-                "nama": "Monitor",
+                "nama": "A.Monitor",
                 "gambar": "layarmonitor.png",
                 "fungsi": "Menampilkan informasi visual.",
                 "penjelasan": "Layar monitor berfungsi untuk menampilkan hasil pengolahan data di komputer, seperti gambar, teks, angka, grafik, dan sebagainya. Ada beberapa jenis monitor yang biasa digunakan, seperti Cathode Ray Tube (CRT), Liquid Crystal Display (LCD), dan Light Emitting Diode (LED)"
             },
             {
-                "nama": "Printer",
+                "nama": "B.Printer",
                 "gambar": "printer.png",
                 "fungsi": "Mencetak informasi ke media kertas.",
                 "penjelasan": "Printer digunakan untuk mencetak gambar, foto, dokumen dalam bentuk media kertas. Ada beberapa jenis printer yang kini masih digunakan di antaranya printer dot matrix, inkjet, laserjet, dan plotter"
             },
             {
-                "nama": "Speaker",
+                "nama": "C.Speaker",
                 "gambar": "speaker.png",
                 "fungsi": "Mengeluarkan suara dari komputer.",
                 "penjelasan": "Alat untuk menghasilkan suara dari komputer,seperti musik, percakapan di film, dan efek suara lainnya dinamakan speaker"

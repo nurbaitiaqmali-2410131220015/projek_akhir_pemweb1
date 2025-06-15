@@ -1,6 +1,6 @@
 [
     {
-        "judul": "Gadget dan Bluetooth",
+        "judul": "A.Gadget dan Bluetooth",
         "deskripsi": "Dua perangkat elektronik juga dapat berkomunikasi dan berinteraksi. Sarana untuk berkomunikasi pada komputer atau ponsel yang banyak dipasang saat ini adalah bluetooth. Bluetooth adalah standar teknologi tanpa kabel (nirkabel) yang digunakan untuk bertukar data antara perangkat tetap dan seluler dalam jarak dekat menggunakan gelombang radio Ultra High Frequency (UHF) dari 2,402 GHz hingga 2,480 GHz, dan dapat digunakan untuk membangun jaringan area pribadi (PAN).Bluetooth memiliki banyak kegunaan, yaitu: menghubungkan laptop dan ponsel, ponsel dan headphones, ponsel dan televisi, dan lainnya.",
         "teknologi": {
             "nama": "Bluetooth",
@@ -19,7 +19,7 @@
         "penjelasan": "Selain itu, ada juga cara berbagi koneksi internet dari telepon seluler dengan komputer lain yang terhubung. Cara itu disebut dengan tethering atau disebut juga phone-as-modem (PAM). Koneksi peranti seluler dengan peranti lain tersebut dapat dilakukan melalui LAN nirkabel (WLAN/Wi-Fi), melalui Bluetooth atau dengan koneksi fisik menggunakan kabel, misalnya melalui USB.Jika tethering dilakukan melalui WLAN, akan tercipta hotspot seluler, yang memungkinkan peranti telepon berfungsi sebagai router portabel. Hotspot seluler bisa dilindungi dengan PIN atau kata sandi. Peranti seluler yang terhubung ke internet dapat bertindak sebagai titik akses nirkabel portabel dan router untuk peranti yang terhubung dengannya."
     },
     {
-        "judul": "Closed-Circuit Television (CCTV)",
+        "judul": "B.Closed-Circuit Television (CCTV)",
         "konten": [
             "CCTV atau biasa juga disebut video surveillance adalah alat yang mampu merekam kejadian dalam bentuk video. CCTV yang terpasang digunakan untuk merekam kejadian dalam radius tertentu di sekitar CCTV. CCTV adalah televisi dengan sistem rangkaian tertutup, karena sinyal tidak ditransmisikan secara terbuka seperti pada siaran televisi. Televisi dalam CCTV adalah kamera video yang berfungsi sebagai media telekomunikasi yang mengirimkan gambar bergerak ke monitor pengawas. Gambar bergerak atau video tersebut bisa direkam dan disimpan ke media penyimpan elektronis.",
             "Saat ini, teknologi CCTV makin canggih dengan resolusi video yang makin baik, dan harga yang makin terjangkau membuatnya banyak digunakan di rumah dan di kantor. CCTV ini dapat dihidupmatikan dan dikendalikan dari jarak jauh menggunakan internet",
