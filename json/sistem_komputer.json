@@ -29,7 +29,7 @@
         "pilihan_b": "Mengontrol permainan",
         "pilihan_c": "Menyimpan data",
         "pilihan_d": "Mengetik huruf",
-        "jawaban": "C"
+        "jawaban": "B"
     },
     {
         "soal": "5. RAM berfungsi untuk …",
@@ -37,7 +37,7 @@
         "pilihan_b": "Menyimpan data sementara saat komputer bekerja",
         "pilihan_c": "Menyimpan suara",
         "pilihan_d": "menampilkan data",
-        "jawaban": "C"
+        "jawaban": "B"
     },
     {
         "soal": "6. Komponen utama CPU yang mengatur jalannya instruksi adalah …",
@@ -124,12 +124,12 @@
         "pilihan_a": " Karena CCTV hanya merekam siaran televisi",
         "pilihan_b": "Karena semua rekaman harus disalin dulu ke kaset",
         "pilihan_c": "Karena banyak kejadian terekam dan harus ditelusuri satu per satu",
-        "Dpilihan_d": "Karena CCTV tidak memiliki penyimpanan internal",
+        "pilihan_d": "Karena CCTV tidak memiliki penyimpanan internal",
         "jawaban": "C"
     },
     {
         "soal": "17.CCTV disebut sebagai sistem televisi dengan rangkaian tertutup karena...",
-        "pilihan_a": "Sinyalnya tidak disiarkaan ssecara umum",
+        "pilihan_a": "Sinyalnya tidak disiarkaan secara umum",
         "pilihan_b": "Kamera CCTV selalu merekam 24 jam",
         "pilihan_c": "CCTV hanya digunakan di studio TV",
         "pilihan_d": "CCTV memiliki layar sangat kecil",
