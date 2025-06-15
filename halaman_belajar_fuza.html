@@ -2,186 +2,200 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Halaman Belajar</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
-      font-family: 'Comic Neue', sans-serif;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halaman Belajar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            font-family: 'Comic Neue', sans-serif;
+            overflow-x: hidden;
+        }
 
-    .navbar {
-      background-color: #58b1f5;
-    }
+        .navbar {
+            background-color: #58b1f5;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
 
-    .navbar-brand i {
-      font-size: 1.8em;
-      color: white;
-    }
+        .navbar-brand i {
+            font-size: 1.8rem;
+            color: white;
+            transition: color 0.3s ease;
+        }
 
-    .navbar-brand i:hover {
-      color: #dceeff;
-    }
+        .navbar-brand i:hover {
+            color: #dceeff;
+        }
 
-    .choice-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: calc(100vh - 80px);
-      gap: 40px;
-      flex-wrap: wrap;
-      padding: 20px;
-    }
+        .choice-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 80px);
+            gap: 40px;
+            flex-wrap: wrap;
+            padding: 20px;
+            margin-top: 60px;
+        }
 
-    .choice-card {
-      background-color: white;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      padding: 30px;
-      width: 280px;
-      min-height: 370px;
-      cursor: pointer;
-      transition: all 0.4s ease;
-      position: relative;
-    }
+        .choice-card {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 30px;
+            width: 280px;
+            min-height: 370px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+        }
 
-    .choice-card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-    }
+        .choice-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
 
-    .choice-card img {
-      max-width: 180px;
-      height: auto;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    }
+        .choice-card img {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    .choice-card .btn {
-      background-color: #4a5dff;
-      border: none;
-      color: white;
-      padding: 12px 30px;
-      font-size: 1.1em;
-      font-weight: bold;
-      border-radius: 10px;
-      transition: background-color 0.3s ease;
-    }
+        .choice-card .btn {
+            background-color: #4a5dff;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
 
-    .choice-card .btn:hover {
-      background-color: #3649d3;
-    }
+        .choice-card .btn:hover {
+            background-color: #3649d3;
+        }
 
-    .title-text {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: white;
-    }
+        .title-text {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            flex-grow: 1;
+        }
 
-    @media (max-width: 768px) {
-      .choice-container {
-        flex-direction: column;
-      }
-    }
+        @media (max-width: 768px) {
+            .choice-container {
+                flex-direction: column;
+            }
+        }
 
-    .stars {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background: transparent;
-      z-index: 0;
-      pointer-events: none;
-    }
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: transparent;
+            z-index: 0;
+            pointer-events: none;
+        }
 
-    .star {
-      width: 2px;
-      height: 2px;
-      background: white;
-      position: absolute;
-      animation: twinkle 2s infinite ease-in-out;
-      opacity: 0.8;
-    }
+        .star {
+            width: 2px;
+            height: 2px;
+            background: white;
+            position: absolute;
+            animation: twinkle 2s infinite ease-in-out;
+            opacity: 0.8;
+        }
 
-    @keyframes twinkle {
+        @keyframes twinkle {
 
-      0%,
-      100% {
-        opacity: 0.5;
-      }
+            0%,
+            100% {
+                opacity: 0.5;
+            }
 
-      50% {
-        opacity: 1;
-      }
-    }
-  </style>
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="stars">
-  </div>
+    <div class="stars"></div>
 
-  <nav class="navbar">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-      <a class="navbar-brand" href="halaman_mapel_melly.html" title="Kembali ke Beranda">
-        <i class="fas fa-house"></i>
-      </a>
-      <div class="mx-auto title-text">BELAJAR</div>
+    <nav class="navbar">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-3">
+            <a class="navbar-brand d-flex align-items-center" href="halaman_mapel_melly.html"
+                title="Kembali ke Beranda">
+                <i class="fas fa-house"></i>
+            </a>
+
+            <div class="title-text">
+                BELAJAR
+            </div>
+
+            <div style="width: 1.8rem;"></div>
+        </div>
+    </nav>
+
+    <div class="choice-container">
+        <div class="choice-card" onclick="selectOption('materi')">
+            <img src="belajar.png" alt="materi" />
+            <button class="btn">BELAJAR</button>
+        </div>
+
+        <div class="choice-card" onclick="selectOption('video')">
+            <img src="video.png" alt="video" />
+            <button class="btn">VIDEO</button>
+        </div>
     </div>
-  </nav>
 
-  <div class="choice-container">
-    <div class="choice-card" onclick="selectOption('materi')">
-      <img src="belajar.png" alt="materi" />
-      <button class="btn">BELAJAR</button>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
-    <div class="choice-card" onclick="selectOption('video')">
-      <img src="video.png" alt="video" />
-      <button class="btn">VIDEO</button>
-    </div>
-  </div>
+    <script>
+        function selectOption(option) {
+            const selectedMapel = localStorage.getItem('selectedSubject');
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+            if (!selectedMapel) {
+                alert("Silakan pilih mapel terlebih dahulu.");
+                return;
+            }
+            const mapelParam = selectedMapel.toLowerCase().replace(/ /g, '_');
+            if (option === 'materi') {
+                window.location.href = `materi.html?mapel=${mapelParam}`;
+            } else if (option === 'video') {
+                window.location.href = `halaman_materi_video_baiti.html?mapel=${mapelParam}`;
+            }
+        }
 
-  <script>
-    function selectOption(option) {
-      const selectedMapel = localStorage.getItem('selectedSubject');
-
-      if (!selectedMapel) {
-        alert("Silakan pilih mapel terlebih dahulu.");
-        return;
-      }
-      const mapelParam = selectedMapel.toLowerCase().replace(/ /g, '_');
-      if (option === 'materi') {
-        window.location.href = `materi.html?mapel=${mapelParam}`;
-      } else if (option === 'video') {
-        window.location.href = `halaman_materi_video_baiti.html?mapel=${mapelParam}`;
-      }
-      
-    }
-
-    const starsContainer = document.querySelector('.stars');
-    for (let i = 0; i < 50; i++) {
-      const star = document.createElement('div');
-      star.classList.add('star');
-      star.style.top = `${Math.random() * 100}%`;
-      star.style.left = `${Math.random() * 100}%`;
-      star.style.animationDelay = `${Math.random() * 2}s`;
-      starsContainer.appendChild(star);
-
-      
-    }
-
-  </script>
+        const starsContainer = document.querySelector('.stars');
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            starsContainer.appendChild(star);
+        }
+    </script>
 </body>
 
 </html>
