@@ -21,34 +21,6 @@
         .navbar-brand i:hover {
             color: #cdd9ff;
         }
-        .navbar {
-            background-color: #58b1f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 35px 0;
-        }
-
-        .home-icon {
-            position: absolute;
-            left: 20px;
-            font-size: 1.8em;
-            color: white;
-            text-decoration: none;
-        }
-
-        .home-icon:hover {
-            color: #dceeff;
-        }
-
-        .navbar-title {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: var(--text-white);
-            margin: 0;
-            color: white;
-        }
     </style>
 </head>
 
@@ -82,11 +54,11 @@
         const nomor = parseInt(getQueryParameter('nomor')) || 0;
         const namaFile = getQueryParameter('file') || 'soal';
 
-        
+        // Ambil skor dari URL atau default 0
         let skor = parseInt(getQueryParameter('skor')) || 0;
-        const totalSoal = 5; 
+        const totalSoal = 5; // Sesuaikan dengan jumlah soal
 
-        
+        // Atur waktuMulai dengan localStorage supaya konsisten antar soal
         let waktuMulai;
         if (!localStorage.getItem("waktuMulai")) {
             waktuMulai = new Date();
@@ -154,12 +126,12 @@
 
                         if (b.getAttribute('data-jawaban') === jawabanBenar) {
                             b.classList.remove('btn-light');
-                            b.classList.add('btn-success'); 
+                            b.classList.add('btn-success'); // hijau
                         }
 
                         if (b.getAttribute('data-jawaban') !== jawabanBenar && b === this) {
                             b.classList.remove('btn-light');
-                            b.classList.add('btn-danger'); 
+                            b.classList.add('btn-danger'); // merah
                         }
                     });
 
