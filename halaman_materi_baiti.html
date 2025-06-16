@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi Teori</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #eef;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #3b82f6;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        #materi-container {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            color: #1e40af;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        .nav-button {
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            margin: 10px auto;
+            display: block;
+            cursor: pointer;
+        }
+
+        .nav-button:hover {
+            background-color: #1e40af;
+        }
+
+        #soalBtn {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">Materi Pemrograman Interaktif</div>
+
+    <div id="materi-container">
+        <p>Memuat materi...</p>
+    </div>
+
+    <button class="nav-button" id="nextBtn">Materi Selanjutnya</button>
+    <div class="button-container text-center my-4">
+        <button class="nav-button" id="soalBtn">
+            Lanjut ke Halaman Soal
+        </button>
+    </div>
+
+    <script>
+        let dataArr = [];
+        let currentIndex = 0;
+
+        async function loadMateri(index) {
+            const container = document.getElementById("materi-container");
+            container.innerHTML = "<p>Memuat materi...</p>";
+
+            try {
+                if (dataArr.length === 0) {
+                    const res = await fetch("materi.json");
+                    if (!res.ok) throw new Error("Gagal memuat file materi.json");
+                    dataArr = await res.json();
+                }
+
+                const data = dataArr[index];
+                let html = `
+                <div class="card">
+                    <h2>${data.judul}</h2>
+                    <p><strong>Deskripsi:</strong> ${data.deskripsi || ''}</p>
+                </div>
+            `;
+
+                if (Array.isArray(data.perangkat)) {
+                    data.perangkat.forEach(perangkat => {
+                        html += `
+                        <div class="card">
+                            <h3>${perangkat.nama}</h3>
+                            ${perangkat.gambar ? `<img src="${perangkat.gambar}" alt="${perangkat.nama}">` : ''}
+                            <p><strong>Fungsi:</strong> ${perangkat.fungsi}</p>
+                            <p><strong>Penjelasan:</strong> ${perangkat.penjelasan}</p>
+                        </div>
+                    `;
+                    });
+                }
+
+                container.innerHTML = html;
+                const nextBtn = document.getElementById("nextBtn");
+                const soalBtn = document.getElementById("soalBtn");
+
+                if (index >= dataArr.length - 1) {
+                    nextBtn.disabled = true;
+                    nextBtn.innerText = "Materi Selesai";
+                    if (soalBtn) soalBtn.style.display = "block";
+                } else {
+                    nextBtn.disabled = false;
+                    nextBtn.innerText = "Materi Selanjutnya";
+                    if (soalBtn) soalBtn.style.display = "none";
+                }
+
+            } catch (err) {
+                container.innerHTML = `<p style="color: red;">${err.message}</p>`;
+            }
+        }
+
+        document.getElementById("nextBtn").addEventListener("click", () => {
+            if (currentIndex < dataArr.length - 1) {
+                currentIndex++;
+                loadMateri(currentIndex);
+            }
+        });
+
+        window.addEventListener("DOMContentLoaded", () => {
+            loadMateri(currentIndex);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const soalBtn = document.getElementById('soalBtn');
+            if (soalBtn) {
+                soalBtn.addEventListener('click', () => {
+                    window.location.href = 'halaman_level_baiti.html';
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
