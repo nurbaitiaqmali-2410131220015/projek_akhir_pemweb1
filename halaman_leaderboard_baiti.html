@@ -62,13 +62,33 @@
             <button class="btn btn-light fw-bold px-5 py-2 w-75">Lanjutkan</button>
         </div>
 
+        <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
 
+        <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"></script>
         <script>
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "firebase/app";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyDhsif5xh-jqOsqHO8Gf8QkW8Se2HFSjww",
+                authDomain: "proyekpemweb1.firebaseapp.com",
+                databaseURL: "https://proyekpemweb1-default-rtdb.firebaseio.com",
+                projectId: "proyekpemweb1",
+                storageBucket: "proyekpemweb1.firebasestorage.app",
+                messagingSenderId: "163467405680",
+                appId: "1:163467405680:web:aedd87aa8a12936eab47b5"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
             const nama = localStorage.getItem("username") || "Pengguna";
             const skor = parseInt(localStorage.getItem("skor")) || 0;
             let leaderboardData = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
-            
+
             const existingUserIndex = leaderboardData.findIndex(user => user.nama === nama);
             if (existingUserIndex !== -1) {
                 leaderboardData[existingUserIndex].skor = skor;
@@ -76,23 +96,23 @@
                 leaderboardData.push({ nama, skor });
             }
 
-            
+
             leaderboardData.sort((a, b) => b.skor - a.skor);
 
-            
+
             localStorage.setItem("leaderboard", JSON.stringify(leaderboardData));
 
-           
+
             leaderboard.innerHTML = "";
             leaderboardData.slice(0, 3).forEach((user, index) => {
                 leaderboard.innerHTML += `
         <p class="fs-4">
             <i class="bi bi-award text-warning"></i> ${index + 1}. ${user.nama} (${user.skor})
         </p>
-    `;
+        `;
             });
 
-            
+
             const posisi = leaderboardData.findIndex(user => user.nama === nama) + 1;
             document.querySelector("p.text-center.mt-3").textContent =
                 `Hebat! Minggu lalu kamu menempati posisi ke-${posisi}`;
