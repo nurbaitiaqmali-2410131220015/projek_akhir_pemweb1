@@ -130,6 +130,26 @@
             font-weight: 500;
             margin-top: -5px;
         }
+
+        .lanjut-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f0f0f0;
+            color: #0077b6;
+            border: 2px solid #0077b6;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            z-index: 999;
+        }
+
+        .lanjut-button:hover {
+            background-color: #0077b6;
+            color: white;
+        }
     </style>
 </head>
 
@@ -149,11 +169,13 @@
             </div>
             <div class="score-card waktu">
                 <div class="score-label">Waktu</div>
-                <div class="score-value">00.00</div>
+                <div class="score-value">00:00</div>
                 <div class="time-format">MENIT</div>
             </div>
         </div>
     </div>
+
+    <a href="halaman_leaderboard_baiti.html" class="lanjut-button">Lanjut</a>
 
     <script>
         function getQueryParameter(name) {
@@ -167,21 +189,29 @@
         if (!nilai || !waktu) {
             const skor = localStorage.getItem("skor") || 0;
             nilai = skor * 20;
-            waktu = localStorage.getItem("waktu") || "00.00";
+            waktu = localStorage.getItem("waktu") || "0";
+        }
+
+        function formatWaktu(detik) {
+            const menit = Math.floor(detik / 60);
+            const sisaDetik = detik % 60;
+            return `${menit.toString().padStart(2, '0')}:${sisaDetik.toString().padStart(2, '0')}`;
+        }
+
+        let waktuTampil = waktu;
+        if (!isNaN(waktu)) {
+            waktuTampil = formatWaktu(parseInt(waktu));
         }
 
         document.querySelector('.nilai .score-value').textContent = nilai;
-        document.querySelector('.waktu .score-value').textContent = waktu;
+        document.querySelector('.waktu .score-value').textContent = waktuTampil;
 
         const nama = localStorage.getItem("username") || "Pengguna";
         const skor = parseInt(localStorage.getItem("skor")) || 0;
 
         let leaderboardData = JSON.parse(localStorage.getItem("leaderboard")) || [];
-
         leaderboardData.push({ nama, skor });
-
         leaderboardData.sort((a, b) => b.skor - a.skor);
-
         localStorage.setItem("leaderboard", JSON.stringify(leaderboardData));
     </script>
 
