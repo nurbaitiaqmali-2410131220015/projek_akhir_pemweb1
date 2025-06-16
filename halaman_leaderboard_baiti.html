@@ -62,46 +62,75 @@
             <button class="btn btn-light fw-bold px-5 py-2 w-75">Lanjutkan</button>
         </div>
 
+        <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 
         <script>
+            // Konfigurasi Firebase
+            const firebaseConfig = {
+                apiKey: "AIzaSyDhsif5xh-jqOsqHO8Gf8QkW8Se2HFSjww",
+                authDomain: "proyekpemweb1.firebaseapp.com",
+                projectId: "proyekpemweb1",
+                storageBucket: "proyekpemweb1.appspot.com",
+                messagingSenderId: "163467405680",
+                appId: "1:163467405680:web:aedd87aa8a12936eab47b5"
+            };
+
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+
             const nama = localStorage.getItem("username") || "Pengguna";
             const skor = parseInt(localStorage.getItem("skor")) || 0;
-            let leaderboardData = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
-            
-            const existingUserIndex = leaderboardData.findIndex(user => user.nama === nama);
-            if (existingUserIndex !== -1) {
-                leaderboardData[existingUserIndex].skor = skor;
-            } else {
-                leaderboardData.push({ nama, skor });
+            async function simpanKeFirestore() {
+                const leaderboardRef = db.collection("leaderboard");
+
+                const snapshot = await leaderboardRef.where("nama", "==", nama).get();
+
+                if (!snapshot.empty) {
+                    snapshot.forEach(async doc => {
+                        const data = doc.data();
+                        if (skor > data.skor) {
+                            await leaderboardRef.doc(doc.id).update({ skor });
+                        }
+                    });
+                } else {
+                    await leaderboardRef.add({ nama, skor });
+                }
             }
 
-            
-            leaderboardData.sort((a, b) => b.skor - a.skor);
+            async function tampilkanLeaderboard() {
+                const leaderboardEl = document.getElementById("leaderboard");
+                const leaderboardRef = db.collection("leaderboard").orderBy("skor", "desc");
+                const snapshot = await leaderboardRef.get();
 
-            
-            localStorage.setItem("leaderboard", JSON.stringify(leaderboardData));
+                let posisi = 0;
+                let index = 0;
+                leaderboardEl.innerHTML = "";
 
-           
-            leaderboard.innerHTML = "";
-            leaderboardData.slice(0, 3).forEach((user, index) => {
-                leaderboard.innerHTML += `
-        <p class="fs-4">
-            <i class="bi bi-award text-warning"></i> ${index + 1}. ${user.nama} (${user.skor})
-        </p>
-    `;
-            });
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    index++;
 
-            
-            const posisi = leaderboardData.findIndex(user => user.nama === nama) + 1;
-            document.querySelector("p.text-center.mt-3").textContent =
-                `Hebat! Minggu lalu kamu menempati posisi ke-${posisi}`;
+                    if (index <= 3) {
+                        leaderboardEl.innerHTML += `
+          <p class="fs-4">
+            <i class="bi bi-award text-warning"></i> ${index}. ${data.nama} (${data.skor})
+          </p>`;
+                    }
 
+                    if (data.nama === nama && posisi === 0) {
+                        posisi = index;
+                    }
+                });
+
+                document.querySelector("p.text-center.mt-3").textContent =
+                    `Hebat! Minggu lalu kamu menempati posisi ke-${posisi}`;
+            }
+
+            simpanKeFirestore().then(() => tampilkanLeaderboard());
         </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
 
 </body>
 

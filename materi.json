@@ -1,0 +1,78 @@
+[
+  {
+    "judul": "1. Algoritma dan Pemrograman",
+    "deskripsi": "Algoritma adalah langkah-langkah sistematis untuk menyelesaikan masalah. Contohnya, langkah membeli tiket bioskop: pergi ke bioskop, pilih film, antre, bayar, terima tiket.",
+    "perangkat": [
+      {
+        "nama": "A. Apa Itu Pemrograman?",
+        "gambar": "gambar/Langkah_kelima_membuat_flowchart.jpg",
+        "fungsi": "Pemrograman adalah proses memberi perintah ke komputer.",
+        "penjelasan": "Komputer tidak bisa berpikir sendiri. Ia hanya menjalankan instruksi (kode) dari manusia. Kita menulis kode, lalu komputer menjalankan sesuai perintah yang ditulis."
+      }
+    ]
+  },
+  {
+    "judul": "2. Mengapa Belajar Programming Itu Penting?",
+    "deskripsi": "Programming membangun logika, kreatifitas, serta berguna di berbagai bidang seperti Sains dan Matematika."
+  },
+  {
+    "judul": "3. Mengenal Pemrograman Visual dengan Scratch",
+    "deskripsi": "Scratch adalah bahasa pemrograman visual berbasis blok. Digunakan untuk membuat game, animasi, dan cerita.",
+    "perangkat": [
+      {
+        "nama": "A. Bagian-Bagian Scratch",
+        "gambar": "gambar/Image 026.png",
+        "fungsi": "Mengenal fungsi menu dan fitur utama Scratch.",
+        "penjelasan": "Menu A - G mewakili kategori blok, area kerja, panggung, latar belakang, dan sprite. Pengguna menyusun blok untuk membuat program di Scratch."
+      }
+    ]
+  },
+  {
+    "judul": "4. Aktivitas Belajar dengan Scratch",
+    "deskripsi": "Berisi 5 aktivitas interaktif: menggerakkan sprite, membuat perulangan, efek suara, mengganti backdrop, dan interaksi antar sprite.",
+    "perangkat": [
+      {
+        "nama": "A. Aktivitas 1: Mengenal Sprite Pertama",
+        "gambar": "",
+        "fungsi": "Membuat sprite bergerak saat tombol ditekan.",
+        "penjelasan": "Gunakan kode: when space key pressed, move 10 steps. Sprite bergerak berdasarkan input keyboard."
+      },
+      {
+        "nama": "B. Aktivitas 2: Jalan Tanpa Henti",
+        "gambar": "",
+        "fungsi": "Memahami perulangan dan kondisi.",
+        "penjelasan": "Gunakan forever, repeat, if on edge bounce, wait. Sprite terus bergerak dan memantul di tepi panggung."
+      },
+      {
+        "nama": "C. Aktivitas 3: Bermain dengan Suara",
+        "gambar": "",
+        "fungsi": "Menambahkan efek suara.",
+        "penjelasan": "Gunakan play sound dan start sound. Efek suara berbeda tergantung perintah."
+      },
+      {
+        "nama": "D. Aktivitas 4: Mengubah Tampilan dan Backdrop",
+        "gambar": "",
+        "fungsi": "Mengganti latar belakang dan menambah sprite.",
+        "penjelasan": "Gunakan switch backdrop to dan tambahkan sprite dari galeri. Proyek menjadi lebih dinamis dan menarik."
+      },
+      {
+        "nama": "E. Aktivitas 5: Interaksi Antar Sprite",
+        "gambar": "",
+        "fungsi": "Contoh interaksi: kucing bermain bola.",
+        "penjelasan": "Gunakan hide, show, forever, turn. Sprite merespons kondisi dan berinteraksi dengan sprite lain."
+      }
+    ]
+  },
+  {
+    "judul": "5. Robot Manual Tanpa Komputer",
+    "deskripsi": "Memahami konsep pemrograman melalui papan dan kartu fisik.",
+    "perangkat": [
+      {
+        "nama": "A. Simulasi Fisik",
+        "gambar": "",
+        "fungsi": "Gunakan papan 10x10 dan sprite dari kartu.",
+        "penjelasan": "Gunakan sticky notes warna untuk gerakan, tampilan, event, dan kontrol. Anak-anak menyusun perintah fisik agar sprite berjalan ke FINISH dan berkata 'Selesai'."
+      }
+    ]
+  }
+]
