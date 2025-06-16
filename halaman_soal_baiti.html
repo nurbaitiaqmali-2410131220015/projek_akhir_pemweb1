@@ -66,11 +66,9 @@
         const nomor = parseInt(getQueryParameter('nomor')) || 0;
         const namaFile = getQueryParameter('file') || 'soal';
 
-        // Ambil skor dari URL atau default 0
         let skor = parseInt(getQueryParameter('skor')) || 0;
-        const totalSoal = 5; // Sesuaikan dengan jumlah soal
-
-        // Atur waktuMulai dengan localStorage supaya konsisten antar soal
+        const totalSoal = 5; 
+        
         let waktuMulai;
         if (!localStorage.getItem("waktuMulai")) {
             waktuMulai = new Date();
@@ -138,12 +136,12 @@
 
                         if (b.getAttribute('data-jawaban') === jawabanBenar) {
                             b.classList.remove('btn-light');
-                            b.classList.add('btn-success'); // hijau
+                            b.classList.add('btn-success'); 
                         }
 
                         if (b.getAttribute('data-jawaban') !== jawabanBenar && b === this) {
                             b.classList.remove('btn-light');
-                            b.classList.add('btn-danger'); // merah
+                            b.classList.add('btn-danger'); 
                         }
                     });
 
@@ -154,14 +152,17 @@
                         } else {
 
                             const waktuSelesai = new Date();
-                            const selisih = Math.floor((waktuSelesai - waktuMulai) / 1000);
+                            const selisih = Math.floor((waktuSelesai - waktuMulai) / 1000); 
                             const menit = Math.floor(selisih / 60);
                             const detik = selisih % 60;
-                            const waktuFormatted = `${menit.toString().padStart(2, '0')}.${detik.toString().padStart(2, '0')}`;
+                            const waktuFormatted = `${menit.toString().padStart(2, '0')}:${detik.toString().padStart(2, '0')}`;
 
-                            localStorage.setItem("skor", skor);
-                            localStorage.setItem("waktu", waktuFormatted);
-                            localStorage.removeItem("waktuMulai");
+
+                            console.log("Waktu mulai:", waktuMulai);
+                            console.log("Waktu selesai:", waktuSelesai);
+                            console.log("Durasi dalam detik:", selisih);
+                            console.log("Formatted waktu:", waktuFormatted);
+
 
                             window.location.href = `halaman_nilai_melly.html?nilai=${skor * 5}&waktu=${waktuFormatted}`;
                         }
