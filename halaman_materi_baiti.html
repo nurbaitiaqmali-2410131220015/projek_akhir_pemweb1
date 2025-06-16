@@ -83,6 +83,7 @@
             Lanjut ke Halaman Soal
         </button>
     </div>
+
     <script>
         let dataArr = [];
         let currentIndex = 0;
@@ -100,42 +101,38 @@
 
                 const data = dataArr[index];
                 let html = `
-  <div class="card">
-    <h2>${data.judul}</h2>
-    ${data.gambar ? `<img src="${data.gambar}" alt="${data.judul}">` : ''}
-    <p><em>${data.keterangan || ''}</em></p>
-    <p>${data.penjelasan}</p>
-  </div>`;
+                <div class="card">
+                    <h2>${data.judul}</h2>
+                    <p><strong>Deskripsi:</strong> ${data.deskripsi || ''}</p>
+                </div>
+            `;
 
-                if (Array.isArray(data.sub_judul)) {
-                    data.sub_judul.forEach(sub => {
+                if (Array.isArray(data.perangkat)) {
+                    data.perangkat.forEach(perangkat => {
                         html += `
-      <div class="card">
-        <h3>${sub.judul}</h3>
-        ${sub.gambar ? `<img src="${sub.gambar}" alt="${sub.judul}">` : ''}
-        <p><strong>Deskripsi:</strong> ${sub.deskripsi}</p>
-        <p><strong>Penjelasan:</strong> ${sub.penjelasan}</p>
-        <p><strong>Cara Kerja:</strong> ${sub["cara kerja"]}</p>
-      </div>`;
+                        <div class="card">
+                            <h3>${perangkat.nama}</h3>
+                            ${perangkat.gambar ? `<img src="${perangkat.gambar}" alt="${perangkat.nama}">` : ''}
+                            <p><strong>Fungsi:</strong> ${perangkat.fungsi}</p>
+                            <p><strong>Penjelasan:</strong> ${perangkat.penjelasan}</p>
+                        </div>
+                    `;
                     });
                 }
 
-
-                html += `</div>`;
                 container.innerHTML = html;
-
-                // Atur tombol
+                const nextBtn = document.getElementById("nextBtn");
                 const soalBtn = document.getElementById("soalBtn");
-if (index >= dataArr.length - 1) {
-  nextBtn.disabled = true;
-  nextBtn.innerText = "Materi Selesai";
-  if (soalBtn) soalBtn.style.display = "block";  // tampilkan tombol soal
-} else {
-  nextBtn.disabled = false;
-  nextBtn.innerText = "Materi Selanjutnya";
-  if (soalBtn) soalBtn.style.display = "none";   // sembunyikan tombol soal
-}
 
+                if (index >= dataArr.length - 1) {
+                    nextBtn.disabled = true;
+                    nextBtn.innerText = "Materi Selesai";
+                    if (soalBtn) soalBtn.style.display = "block";
+                } else {
+                    nextBtn.disabled = false;
+                    nextBtn.innerText = "Materi Selanjutnya";
+                    if (soalBtn) soalBtn.style.display = "none";
+                }
 
             } catch (err) {
                 container.innerHTML = `<p style="color: red;">${err.message}</p>`;
@@ -162,6 +159,7 @@ if (index >= dataArr.length - 1) {
             }
         });
     </script>
+
 </body>
 
 </html>
