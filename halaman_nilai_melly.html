@@ -177,25 +177,24 @@
 
     <a href="halaman_leaderboard_baiti.html" class="lanjut-button">Lanjut</a>
 
-    <script>
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "firebase/app";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
+    <!-- Firebase App -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
 
-        // Your web app's Firebase configuration
+    <script>
+        // Konfigurasi Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyDhsif5xh-jqOsqHO8Gf8QkW8Se2HFSjww",
             authDomain: "proyekpemweb1.firebaseapp.com",
             databaseURL: "https://proyekpemweb1-default-rtdb.firebaseio.com",
             projectId: "proyekpemweb1",
-            storageBucket: "proyekpemweb1.firebasestorage.app",
+            storageBucket: "proyekpemweb1.appspot.com",
             messagingSenderId: "163467405680",
             appId: "1:163467405680:web:aedd87aa8a12936eab47b5"
         };
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
+        // Inisialisasi Firebase
+        firebase.initializeApp(firebaseConfig);
+
         function getQueryParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(name);
@@ -205,7 +204,7 @@
         let waktu = getQueryParameter('waktu');
 
         if (!nilai || !waktu) {
-            const skor = localStorage.getItem("skor") || 0;
+            const skor = parseInt(localStorage.getItem("skor")) || 0;
             nilai = skor * 20;
             waktu = localStorage.getItem("waktu") || "0";
         }
@@ -221,16 +220,18 @@
             waktuTampil = formatWaktu(parseInt(waktu));
         }
 
-        document.querySelector('.nilai .score-value').textContent = nilai;
-        document.querySelector('.waktu .score-value').textContent = waktuTampil;
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector('.nilai .score-value').textContent = nilai;
+            document.querySelector('.waktu .score-value').textContent = waktuTampil;
 
-        const nama = localStorage.getItem("username") || "Pengguna";
-        const skor = parseInt(localStorage.getItem("skor")) || 0;
+            const nama = localStorage.getItem("username") || "Pengguna";
+            const skor = parseInt(localStorage.getItem("skor")) || 0;
 
-        let leaderboardData = JSON.parse(localStorage.getItem("leaderboard")) || [];
-        leaderboardData.push({ nama, skor });
-        leaderboardData.sort((a, b) => b.skor - a.skor);
-        localStorage.setItem("leaderboard", JSON.stringify(leaderboardData));
+            let leaderboardData = JSON.parse(localStorage.getItem("leaderboard")) || [];
+            leaderboardData.push({ nama, skor });
+            leaderboardData.sort((a, b) => b.skor - a.skor);
+            localStorage.setItem("leaderboard", JSON.stringify(leaderboardData));
+        });
     </script>
 
 </body>
