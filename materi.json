@@ -1,0 +1,97 @@
+[
+  {
+    "judul": "Algoritma dan Pemrograman",
+    "gambar": "gambar/bagian_algoritma_beli_bioskop.jpg",
+    "keterangan": "Contoh algoritma membeli tiket bioskop",
+    "penjelasan": "Algoritma adalah langkah-langkah sistematis untuk menyelesaikan masalah. Contohnya, langkah membeli tiket bioskop: pergi ke bioskop, pilih film, antre, bayar, terima tiket.",
+    "sub_judul": [
+      {
+        "judul": "Apa Itu Pemrograman?",
+        "deskripsi": "Pemrograman adalah proses memberi perintah ke komputer.",
+        "gambar": "gambar/Langkah_kelima_membuat_flowchart.jpg",
+        "penjelasan": "Komputer tidak bisa berpikir sendiri. Ia hanya menjalankan instruksi (kode) dari manusia.",
+        "cara kerja": "Kita menulis kode, lalu komputer menjalankan sesuai perintah yang ditulis."
+      }
+    ]
+  },
+  {
+    "judul": "Mengapa Belajar Programming Itu Penting?",
+    "gambar": "gambar/Pekerjaan-di-Bidang-AI-Apa-Saja-dan-Bagaimana.webp",
+    "keterangan": "Programming sebagai skill masa depan",
+    "penjelasan": "Programming membangun logika, kreatifitas, serta berguna di berbagai bidang seperti Sains dan Matematika.",
+    "sub_judul": []
+  },
+  {
+    "judul": "Mengenal Pemrograman Visual dengan Scratch",
+    "gambar": "gambar/Sound dan Event.png",
+    "keterangan": "Contoh penggunaan Scratch",
+    "penjelasan": "Scratch adalah bahasa pemrograman visual berbasis blok. Digunakan untuk membuat game, animasi, dan cerita.",
+    "sub_judul": [
+      {
+        "judul": "Bagian-Bagian Scratch",
+        "deskripsi": "Mengenal fungsi menu dan fitur utama Scratch.",
+        "gambar": "gambar/Image 026.png",
+        "penjelasan": "Menu A - G mewakili kategori blok, area kerja, panggung, latar belakang, dan sprite.",
+        "cara kerja": "Pengguna menyusun blok untuk membuat program di Scratch."
+      }
+    ]
+  },
+  {
+    "judul": "Aktivitas Belajar dengan Scratch",
+    "gambar": "gambar/q7-tq-scratch-computer-code-165-sumita-solutions-355x597.png",
+    "keterangan": "Aktivitas coding Scratch",
+    "penjelasan": "Berisi 5 aktivitas interaktif: menggerakkan sprite, membuat perulangan, efek suara, mengganti backdrop, dan interaksi antar sprite.",
+    "sub_judul": [
+      {
+        "judul": "Aktivitas 1: Mengenal Sprite Pertama",
+        "deskripsi": "Membuat sprite bergerak saat tombol ditekan.",
+        "gambar": "",
+        "penjelasan": "Gunakan kode: when space key pressed, move 10 steps.",
+        "cara kerja": "Sprite bergerak berdasarkan input keyboard."
+      },
+      {
+        "judul": "Aktivitas 2: Jalan Tanpa Henti",
+        "deskripsi": "Memahami perulangan dan kondisi.",
+        "gambar": "",
+        "penjelasan": "Gunakan forever, repeat, if on edge bounce, wait.",
+        "cara kerja": "Sprite terus bergerak dan memantul di tepi panggung."
+      },
+      {
+        "judul": "Aktivitas 3: Bermain dengan Suara",
+        "deskripsi": "Menambahkan efek suara.",
+        "gambar": "",
+        "penjelasan": "Gunakan play sound dan start sound.",
+        "cara kerja": "Efek suara berbeda tergantung perintah."
+      },
+      {
+        "judul": "Aktivitas 4: Mengubah Tampilan dan Backdrop",
+        "deskripsi": "Mengganti latar belakang dan menambah sprite.",
+        "gambar": "",
+        "penjelasan": "Gunakan switch backdrop to dan tambahkan sprite dari galeri.",
+        "cara kerja": "Proyek menjadi lebih dinamis dan menarik."
+      },
+      {
+        "judul": "Aktivitas 5: Interaksi Antar Sprite",
+        "deskripsi": "Contoh interaksi: kucing bermain bola.",
+        "gambar": "",
+        "penjelasan": "Gunakan hide, show, forever, turn.",
+        "cara kerja": "Sprite merespons kondisi dan berinteraksi dengan sprite lain."
+      }
+    ]
+  },
+  {
+    "judul": "Robot Manual Tanpa Komputer",
+    "gambar": "",
+    "keterangan": "Simulasi pemrograman fisik",
+    "penjelasan": "Memahami konsep pemrograman melalui papan dan kartu fisik.",
+    "sub_judul": [
+      {
+        "judul": "Simulasi Fisik",
+        "deskripsi": "Gunakan papan 10x10 dan sprite dari kartu.",
+        "gambar": "",
+        "penjelasan": "Gunakan sticky notes warna untuk gerakan, tampilan, event, dan kontrol.",
+        "cara kerja": "Anak-anak menyusun perintah fisik agar sprite berjalan ke FINISH dan berkata 'Selesai'."
+      }
+    ]
+  }
+]
