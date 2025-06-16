@@ -58,6 +58,24 @@
     </div>
 
     <script>
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "firebase/app";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDhsif5xh-jqOsqHO8Gf8QkW8Se2HFSjww",
+            authDomain: "proyekpemweb1.firebaseapp.com",
+            databaseURL: "https://proyekpemweb1-default-rtdb.firebaseio.com",
+            projectId: "proyekpemweb1",
+            storageBucket: "proyekpemweb1.firebasestorage.app",
+            messagingSenderId: "163467405680",
+            appId: "1:163467405680:web:aedd87aa8a12936eab47b5"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
         function getQueryParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(name);
@@ -67,8 +85,8 @@
         const namaFile = getQueryParameter('file') || 'soal';
 
         let skor = parseInt(getQueryParameter('skor')) || 0;
-        const totalSoal = 5; 
-        
+        const totalSoal = 5;
+
         let waktuMulai;
         if (!localStorage.getItem("waktuMulai")) {
             waktuMulai = new Date();
@@ -136,12 +154,12 @@
 
                         if (b.getAttribute('data-jawaban') === jawabanBenar) {
                             b.classList.remove('btn-light');
-                            b.classList.add('btn-success'); 
+                            b.classList.add('btn-success');
                         }
 
                         if (b.getAttribute('data-jawaban') !== jawabanBenar && b === this) {
                             b.classList.remove('btn-light');
-                            b.classList.add('btn-danger'); 
+                            b.classList.add('btn-danger');
                         }
                     });
 
@@ -152,7 +170,7 @@
                         } else {
 
                             const waktuSelesai = new Date();
-                            const selisih = Math.floor((waktuSelesai - waktuMulai) / 1000); 
+                            const selisih = Math.floor((waktuSelesai - waktuMulai) / 1000);
                             const menit = Math.floor(selisih / 60);
                             const detik = selisih % 60;
                             const waktuFormatted = `${menit.toString().padStart(2, '0')}:${detik.toString().padStart(2, '0')}`;
