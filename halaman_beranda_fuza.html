@@ -255,6 +255,13 @@
     const usernameModal = document.getElementById('usernameModal');
     const inputUsername = document.getElementById('inputUsername');
 
+    document.addEventListener("DOMContentLoaded", function () {
+      const savedUsername = localStorage.getItem("username");
+      if (savedUsername) {
+        usernameDisplay.textContent = savedUsername;
+      }
+    });
+
     usernameDisplay.addEventListener('click', function () {
       usernameModal.style.display = 'flex';
     });
@@ -264,6 +271,8 @@
       if (name) {
         usernameDisplay.textContent = name;
         usernameModal.style.display = 'none';
+
+        localStorage.setItem("username", name);
       } else {
         alert('Nama pengguna tidak boleh kosong!');
       }
@@ -275,6 +284,7 @@
       }
     });
   </script>
+
 
 </body>
 
