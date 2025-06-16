@@ -172,6 +172,15 @@
                                 tanggal: new Date().toISOString()
                             });
 
+                            const firestore = firebase.firestore();
+                            firestore.collection("leaderboard").add({
+                                nama: username,
+                                skor: skor * 5,
+                                mapel: "baiti",
+                                waktu: waktuFormatted,
+                                tanggal: new Date().toISOString()
+                            });
+
                             window.location.href = `halaman_nilai_melly.html?nilai=${skor * 5}&waktu=${waktuFormatted}`;
                         }
                     }, 1000);

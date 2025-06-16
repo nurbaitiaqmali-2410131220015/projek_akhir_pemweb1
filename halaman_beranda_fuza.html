@@ -288,10 +288,17 @@
         usernameDisplay.textContent = name;
         usernameModal.style.display = 'none';
         localStorage.setItem("username", name);
+
+        firebase.database().ref("users/" + name).set({
+          username: name,
+          waktu: new Date().toISOString()
+        });
+
       } else {
         alert('Nama pengguna tidak boleh kosong!');
       }
     }
+
 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
