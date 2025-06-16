@@ -135,15 +135,13 @@
 
 <body>
 
-    <!-- Navbar -->
     <div class="navbar">
         <a href="halaman_beranda_fuza.html" class="home-icon"><i class="fas fa-home"></i></a>
         <h1 class="navbar-title">NILAI & WAKTU</h1>
     </div>
 
-    <!-- Main Content -->
     <div class="main-card">
-        <div class="motivation-text">Luar biasa Kamu jenius kecil yang hebat</div>
+        <div class="motivation-text">Luar biasa! Kamu jenius kecil yang hebat!</div>
         <div class="score-container">
             <div class="score-card nilai">
                 <div class="score-label">Nilai</div>
@@ -157,7 +155,6 @@
         </div>
     </div>
 
-    <!-- Script -->
     <script>
         function getQueryParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -175,6 +172,17 @@
 
         document.querySelector('.nilai .score-value').textContent = nilai;
         document.querySelector('.waktu .score-value').textContent = waktu;
+
+        const nama = localStorage.getItem("username") || "Pengguna";
+        const skor = parseInt(localStorage.getItem("skor")) || 0;
+
+        let leaderboardData = JSON.parse(localStorage.getItem("leaderboard")) || [];
+
+        leaderboardData.push({ nama, skor });
+
+        leaderboardData.sort((a, b) => b.skor - a.skor);
+
+        localStorage.setItem("leaderboard", JSON.stringify(leaderboardData));
     </script>
 
 </body>
