@@ -247,11 +247,8 @@
 
             if (!isNaN(nilai) && waktuURL !== null) {
 
-                waktuDetik = parseInt(waktuURL);
-                if (isNaN(waktuDetik)) {
+                waktuDetik = waktuStringKeDetik(waktuURL);
 
-                    waktuDetik = waktuStringKeDetik(waktuURL);
-                }
                 console.log("Data dari URL");
             } else {
 
