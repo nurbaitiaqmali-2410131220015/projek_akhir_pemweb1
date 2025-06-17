@@ -238,40 +238,29 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            let nilaiURL = getQueryParameter('nilai');
-            let waktuURL = getQueryParameter('waktu');
+            const nilaiURL = getQueryParameter('nilai');
+            const waktuURL = getQueryParameter('waktu');
 
-            console.log("Nilai URL:", nilaiURL);
-            console.log("Waktu URL:", waktuURL);
+            let nilai = parseInt(nilaiURL);
+            nilai = isNaN(nilai) ? 0 : nilai;
 
-            let nilai = nilaiURL !== null ? parseInt(nilaiURL) : 0;
             let waktuDetik = 0;
 
-            if (waktuURL !== null) {
-                if (waktuURL.includes(':')) {
-                    waktuDetik = waktuStringKeDetik(waktuURL);
-                } else {
-                    waktuDetik = parseInt(waktuURL);
-                }
+            if (waktuURL && waktuURL.includes(':')) {
+                waktuDetik = waktuStringKeDetik(waktuURL);
+            } else if (waktuURL) {
+                waktuDetik = parseInt(waktuURL);
             }
-            console.log("Waktu Detik:", waktuDetik);
-            console.log("Waktu Format:", formatWaktu(waktuDetik));
-            if (isNaN(waktuDetik)) {
+
+            if (isNaN(waktuDetik) || waktuDetik <= 0) {
                 const waktuLSRaw = localStorage.getItem("waktu") || "00:00";
                 waktuDetik = waktuStringKeDetik(waktuLSRaw);
             }
 
-            nilai = isNaN(nilai) ? 0 : nilai;
-            waktuDetik = isNaN(waktuDetik) ? 0 : waktuDetik;
-
-            const skor = nilai / 5;
-
-            const nama = localStorage.getItem("username") || "Pengguna";
-
             document.querySelector('.nilai .score-value').textContent = nilai;
             document.querySelector('.waktu .score-value').textContent = formatWaktu(waktuDetik);
 
-            localStorage.setItem("skor", skor.toString());
+            localStorage.setItem("skor", (nilai / 5).toString());
             localStorage.setItem("waktu", formatWaktu(waktuDetik));
         });
 
