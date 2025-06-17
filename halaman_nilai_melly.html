@@ -241,8 +241,8 @@
     let nilaiURL = getQueryParameter('nilai');
     let waktuURL = getQueryParameter('waktu');
 
-    let nilai = nilaiURL !== null ? parseInt(nilaiURL) : NaN;
-    let waktuDetik = waktuURL ? waktuStringKeDetik(waktuURL) : NaN;
+    let nilai = nilaiURL !== null ? parseInt(nilaiURL) : 0;
+    let waktuDetik = waktuURL !== null ? parseInt(waktuURL) : 0;
 
     if (isNaN(nilai)) {
         const skorLS = parseInt(localStorage.getItem("skor")) || 0;
