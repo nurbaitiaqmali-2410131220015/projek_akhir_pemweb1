@@ -77,12 +77,17 @@
     }
 
     const nomor = parseInt(getQueryParameter('nomor')) || 0;
+
+    if (nomor === 0) {
+      localStorage.removeItem("waktuMulai");
+    }
+
     const namaFile = getQueryParameter('file') || 'soal';
     let skor = parseInt(getQueryParameter('skor')) || 0;
     const totalSoal = 5;
 
     let waktuMulai;
-    localStorage.getItem("waktu", "00:00");
+
     if (!localStorage.getItem("waktuMulai")) {
       waktuMulai = new Date();
       localStorage.setItem("waktuMulai", waktuMulai.getTime());
@@ -164,16 +169,16 @@
               const detik = selisih % 60;
               const waktuFormatted = `${menit.toString().padStart(2, '0')}:${detik.toString().padStart(2, '0')}`;
 
-                            const username = localStorage.getItem("username") || "Pengguna";
+              const username = localStorage.getItem("username") || "Pengguna";
 
-                            firebase.database().ref("nilai_baiti/" + username).set({
-                                skor: skor * 5,
-                                waktu: waktuFormatted,
-                                tanggal: new Date().toISOString()
-                            });
+              firebase.database().ref("nilai_baiti/" + username).set({
+                skor: skor * 5,
+                waktu: waktuFormatted,
+                tanggal: new Date().toISOString()
+              });
 
-              
-             window.location.href = `halaman_nilai_melly.html?nilai=${skor * 5}&waktu=${waktuFormatted}`;
+
+              window.location.href = `halaman_nilai_melly.html?nilai=${skor * 5}&waktu=${waktuFormatted}`;
 
 
             }
