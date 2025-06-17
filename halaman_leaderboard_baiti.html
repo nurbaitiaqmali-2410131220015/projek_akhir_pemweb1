@@ -15,6 +15,7 @@
             min-height: 100vh;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         .navbar {
             background-color: #58b1f5;
             display: flex;
@@ -121,17 +122,20 @@
                             <i class="bi bi-award text-warning"></i> ${rank}. ${item.nama} (${item.skor})
                         </p>`;
                 }
-
-                if (posisi > 0) {
-                    infoEl.textContent = `Hebat! Minggu lalu kamu menempati posisi ke-${posisi}`;
-                } else {
-                    infoEl.textContent = "Kamu belum ada di leaderboard minggu lalu.";
+                if (item.nama === nama) {
+                    posisi = rank;
                 }
+            
+            if (posisi > 0) {
+                infoEl.textContent = `Hebat! Minggu lalu kamu menempati posisi ke-${posisi}`;
+            } else {
+                infoEl.textContent = "Kamu belum ada di leaderboard minggu lalu.";
+            }
 
-            });
+        });
 
-            document.querySelector("p.text-center.mt-3").textContent =
-                `Hebat! Minggu lalu kamu menempati posisi ke-${posisi}`;
+        document.querySelector("p.text-center.mt-3").textContent =
+            `Hebat! Minggu lalu kamu menempati posisi ke-${posisi}`;
         }
 
         simpanKeDatabase().then(() => tampilkanLeaderboard());
