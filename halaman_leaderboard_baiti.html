@@ -125,14 +125,12 @@
                 if (item.nama === nama) {
                     posisi = rank;
                 }
-            
+         });
             if (posisi > 0) {
                 infoEl.textContent = `Hebat! Minggu lalu kamu menempati posisi ke-${posisi}`;
             } else {
                 infoEl.textContent = "Kamu belum ada di leaderboard minggu lalu.";
             }
-
-        });
 
         document.querySelector("p.text-center.mt-3").textContent =
             `Hebat! Minggu lalu kamu menempati posisi ke-${posisi}`;
