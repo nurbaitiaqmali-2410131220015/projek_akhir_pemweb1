@@ -195,22 +195,24 @@
             let waktuTampil = waktu;
 
             if (nilai !== null && waktu !== null) {
-        
                 console.log("Menggunakan data dari URL");
+                nilai = parseInt(nilai);
             } else {
-               
+                console.log("Menggunakan data dari localStorage");
                 const skorLS = parseInt(localStorage.getItem("skor")) || 0;
-                nilai = skorLS * 20;
+                nilai = skorLS * 5;
                 const waktuLS = localStorage.getItem("waktu") || "0";
                 waktuTampil = isNaN(waktuLS) ? waktuLS : formatWaktu(parseInt(waktuLS));
-                console.log("Menggunakan data dari localStorage");
             }
 
             document.querySelector('.nilai .score-value').textContent = nilai;
             document.querySelector('.waktu .score-value').textContent = waktuTampil;
 
+            localStorage.setItem("skor", nilai / 5);
+            localStorage.setItem("waktu", waktuTampil);
+
             const nama = localStorage.getItem("username") || "Pengguna";
-            const skor = parseInt(nilai) / 5; 
+            const skor = parseInt(nilai) / 5;
 
             let leaderboardData = JSON.parse(localStorage.getItem("leaderboard")) || [];
             leaderboardData.push({ nama, skor });
