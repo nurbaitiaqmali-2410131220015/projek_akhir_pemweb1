@@ -238,35 +238,38 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-    let nilaiURL = getQueryParameter('nilai');
-    let waktuURL = getQueryParameter('waktu');
+            let nilaiURL = getQueryParameter('nilai');
+            let waktuURL = getQueryParameter('waktu');
 
-    let nilai = nilaiURL !== null ? parseInt(nilaiURL) : 0;
-    let waktuDetik = waktuURL !== null ? parseInt(waktuURL) : 0;
+            let nilai = nilaiURL !== null ? parseInt(nilaiURL) : 0;
+            let waktuDetik = 0;
 
-    if (isNaN(nilai)) {
-        const skorLS = parseInt(localStorage.getItem("skor")) || 0;
-        nilai = skorLS * 5; 
-    }
+            if (waktuURL !== null) {
+                if (waktuURL.includes(':')) {
+                    waktuDetik = waktuStringKeDetik(waktuURL);
+                } else {
+                    waktuDetik = parseInt(waktuURL);
+                }
+            }
 
-    if (isNaN(waktuDetik)) {
-        const waktuLSRaw = localStorage.getItem("waktu") || "00:00";
-        waktuDetik = waktuStringKeDetik(waktuLSRaw);
-    }
+            if (isNaN(waktuDetik)) {
+                const waktuLSRaw = localStorage.getItem("waktu") || "00:00";
+                waktuDetik = waktuStringKeDetik(waktuLSRaw);
+            }
 
-    nilai = isNaN(nilai) ? 0 : nilai;
-    waktuDetik = isNaN(waktuDetik) ? 0 : waktuDetik;
+            nilai = isNaN(nilai) ? 0 : nilai;
+            waktuDetik = isNaN(waktuDetik) ? 0 : waktuDetik;
 
-    const skor = nilai / 5;
+            const skor = nilai / 5;
 
-    const nama = localStorage.getItem("username") || "Pengguna";
+            const nama = localStorage.getItem("username") || "Pengguna";
 
-    document.querySelector('.nilai .score-value').textContent = nilai;
-    document.querySelector('.waktu .score-value').textContent = formatWaktu(waktuDetik);
+            document.querySelector('.nilai .score-value').textContent = nilai;
+            document.querySelector('.waktu .score-value').textContent = formatWaktu(waktuDetik);
 
-    localStorage.setItem("skor", skor.toString());
-    localStorage.setItem("waktu", formatWaktu(waktuDetik));
-});
+            localStorage.setItem("skor", skor.toString());
+            localStorage.setItem("waktu", formatWaktu(waktuDetik));
+        });
 
     </script>
 </body>
