@@ -238,38 +238,35 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            let nilaiURL = getQueryParameter('nilai');
-            let waktuURL = getQueryParameter('waktu');
+    let nilaiURL = getQueryParameter('nilai');
+    let waktuURL = getQueryParameter('waktu');
 
-            let nilai = nilaiURL !== null ? parseInt(nilaiURL) : NaN;
-            let waktuDetik = parseInt(waktuURL);
-            if (isNaN(waktuDetik)) {
-                waktuDetik = waktuStringKeDetik(waktuURL);
-            }
+    let nilai = nilaiURL !== null ? parseInt(nilaiURL) : NaN;
+    let waktuDetik = waktuURL ? waktuStringKeDetik(waktuURL) : NaN;
 
-            if (isNaN(nilai)) {
-                const skorLS = parseInt(localStorage.getItem("skor")) || 0;
-                nilai = skorLS * 20;
+    if (isNaN(nilai)) {
+        const skorLS = parseInt(localStorage.getItem("skor")) || 0;
+        nilai = skorLS * 5; 
+    }
 
-                const waktuLSRaw = localStorage.getItem("waktu") || "00:00";
-                waktuDetik = waktuStringKeDetik(waktuLSRaw);
-                console.log("Data dari localStorage");
-            }
+    if (isNaN(waktuDetik)) {
+        const waktuLSRaw = localStorage.getItem("waktu") || "00:00";
+        waktuDetik = waktuStringKeDetik(waktuLSRaw);
+    }
 
-            nilai = isNaN(nilai) ? 0 : nilai;
+    nilai = isNaN(nilai) ? 0 : nilai;
+    waktuDetik = isNaN(waktuDetik) ? 0 : waktuDetik;
 
-            const waktuTampil = formatWaktu(waktuDetik);
+    const skor = nilai / 5;
 
-            const skor = nilai / 5;
+    const nama = localStorage.getItem("username") || "Pengguna";
 
-            const nama = localStorage.getItem("username") || "Pengguna";
+    document.querySelector('.nilai .score-value').textContent = nilai;
+    document.querySelector('.waktu .score-value').textContent = formatWaktu(waktuDetik);
 
-            document.querySelector('.nilai .score-value').textContent = nilai;
-            document.querySelector('.waktu .score-value').textContent = waktuTampil;
-
-
-        });
-
+    localStorage.setItem("skor", skor.toString());
+    localStorage.setItem("waktu", formatWaktu(waktuDetik));
+});
 
     </script>
 </body>
