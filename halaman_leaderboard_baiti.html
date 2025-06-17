@@ -122,18 +122,20 @@
                             <i class="bi bi-award text-warning"></i> ${rank}. ${item.nama} (${item.skor})
                         </p>`;
                 }
-                if (item.nama === nama) {
+                const idPengguna = localStorage.getItem("userId");
+                const currentUserId = Object.keys(data)[index];
+
+                if (currentUserId === idPengguna) {
                     posisi = rank;
                 }
-         });
+
+            });
             if (posisi > 0) {
                 infoEl.textContent = `Hebat! Minggu lalu kamu menempati posisi ke-${posisi}`;
             } else {
                 infoEl.textContent = "Kamu belum ada di leaderboard minggu lalu.";
             }
 
-        document.querySelector("p.text-center.mt-3").textContent =
-            `Hebat! Minggu lalu kamu menempati posisi ke-${posisi}`;
         }
 
         simpanKeDatabase().then(() => tampilkanLeaderboard());
