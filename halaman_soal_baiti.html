@@ -82,6 +82,7 @@
     const totalSoal = 5;
 
     let waktuMulai;
+    localStorage.getItem("waktu", "00:00");
     if (!localStorage.getItem("waktuMulai")) {
       waktuMulai = new Date();
       localStorage.setItem("waktuMulai", waktuMulai.getTime());
