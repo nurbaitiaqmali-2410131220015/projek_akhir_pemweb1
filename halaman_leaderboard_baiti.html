@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,6 +37,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="navbar">
         <a href="halaman_beranda_fuza.html" class="home-icon"><i class="fas fa-home"></i></a>
@@ -79,7 +81,9 @@
         const skor = parseInt(localStorage.getItem("skor")) || 0;
 
         async function simpanKeDatabase() {
-            const userRef = ref(db, 'leaderboard/' + nama);
+            const userId = localStorage.getItem("userId") || Date.now().toString();
+            localStorage.setItem("userId", userId);
+            const userRef = ref(db, 'leaderboard/' + userId);
             await set(userRef, { nama, skor });
         }
 
@@ -122,4 +126,5 @@
         simpanKeDatabase().then(() => tampilkanLeaderboard());
     </script>
 </body>
+
 </html>
