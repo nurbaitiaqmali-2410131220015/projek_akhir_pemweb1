@@ -52,7 +52,8 @@
         <i class="bi bi-trophy" style="font-size: 3rem;"></i>
     </div>
 
-    <p class="text-center mt-3">Hebat! Minggu lalu kamu menempati posisi ke-3</p>
+    <p id="peringkatInfo" class="text-center mt-3">Memuat peringkat...</p>
+
 
     <div class="mx-auto" style="max-width: 800px;">
         <div id="leaderboard" class="text-center bg-info text-dark rounded p-4"></div>
@@ -93,9 +94,11 @@
         async function tampilkanLeaderboard() {
             const snapshot = await get(child(dbRef, "leaderboard"));
             const leaderboardEl = document.getElementById("leaderboard");
+            const infoEl = document.getElementById("peringkatInfo");
 
             if (!snapshot.exists()) {
                 leaderboardEl.innerHTML = "<p>Belum ada data.</p>";
+                infoEl.textContent = "Kamu belum ada di leaderboard minggu lalu.";
                 return;
             }
 
@@ -117,9 +120,12 @@
                         </p>`;
                 }
 
-                if (item.nama === nama && posisi === 0) {
-                    posisi = rank;
+                if (posisi > 0) {
+                    infoEl.textContent = `Hebat! Minggu lalu kamu menempati posisi ke-${posisi}`;
+                } else {
+                    infoEl.textContent = "Kamu belum ada di leaderboard minggu lalu.";
                 }
+
             });
 
             document.querySelector("p.text-center.mt-3").textContent =
