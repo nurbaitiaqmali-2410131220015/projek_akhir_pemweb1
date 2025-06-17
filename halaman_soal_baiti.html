@@ -163,23 +163,13 @@
               const detik = selisih % 60;
               const waktuFormatted = `${menit.toString().padStart(2, '0')}:${detik.toString().padStart(2, '0')}`;
 
-              const username = localStorage.getItem("username") || "Pengguna";
-              const nilaiAkhir = skor * 5;
+                            const username = localStorage.getItem("username") || "Pengguna";
 
-              
-              firebase.database().ref("nilai_baiti/" + username).set({
-                skor: nilaiAkhir,
-                waktu: waktuFormatted,
-                tanggal: new Date().toISOString()
-              });
-
-              
-              firebase.database().ref("leaderboard_baiti").push({
-                username: username,
-                skor: nilaiAkhir,
-                waktu: waktuFormatted,
-                tanggal: new Date().toISOString()
-              });
+                            firebase.database().ref("nilai_baiti/" + username).set({
+                                skor: skor * 5,
+                                waktu: waktuFormatted,
+                                tanggal: new Date().toISOString()
+                            });
 
               
               window.location.href = `halaman_nilai_melly.html?nilai=${nilaiAkhir}&waktu=${waktuFormatted}`;

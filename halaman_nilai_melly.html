@@ -177,36 +177,10 @@
 
     <a href="halaman_leaderboard_baiti.html" class="lanjut-button">Lanjut</a>
 
-    <!-- Firebase App -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-
     <script>
-        // Konfigurasi Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyDhsif5xh-jqOsqHO8Gf8QkW8Se2HFSjww",
-            authDomain: "proyekpemweb1.firebaseapp.com",
-            databaseURL: "https://proyekpemweb1-default-rtdb.firebaseio.com",
-            projectId: "proyekpemweb1",
-            storageBucket: "proyekpemweb1.appspot.com",
-            messagingSenderId: "163467405680",
-            appId: "1:163467405680:web:aedd87aa8a12936eab47b5"
-        };
-
-        // Inisialisasi Firebase
-        firebase.initializeApp(firebaseConfig);
-
         function getQueryParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(name);
-        }
-
-        let nilai = getQueryParameter('nilai');
-        let waktu = getQueryParameter('waktu');
-
-        if (!nilai || !waktu) {
-            const skor = parseInt(localStorage.getItem("skor")) || 0;
-            nilai = skor * 20;
-            waktu = localStorage.getItem("waktu") || "0";
         }
 
         function formatWaktu(detik) {
@@ -215,17 +189,30 @@
             return `${menit.toString().padStart(2, '0')}:${sisaDetik.toString().padStart(2, '0')}`;
         }
 
-        let waktuTampil = waktu;
-        if (!isNaN(waktu)) {
-            waktuTampil = formatWaktu(parseInt(waktu));
-        }
-
         document.addEventListener("DOMContentLoaded", () => {
+            let nilai = getQueryParameter('nilai');
+            let waktu = getQueryParameter('waktu');
+            let waktuTampil = waktu;
+
+            if (nilai !== null && waktu !== null) {
+                console.log("Menggunakan data dari URL");
+                nilai = parseInt(nilai);
+            } else {
+                console.log("Menggunakan data dari localStorage");
+                const skorLS = parseInt(localStorage.getItem("skor")) || 0;
+                nilai = skorLS * 5;
+                const waktuLS = localStorage.getItem("waktu") || "0";
+                waktuTampil = isNaN(waktuLS) ? waktuLS : formatWaktu(parseInt(waktuLS));
+            }
+
             document.querySelector('.nilai .score-value').textContent = nilai;
             document.querySelector('.waktu .score-value').textContent = waktuTampil;
 
+            localStorage.setItem("skor", nilai / 5);
+            localStorage.setItem("waktu", waktuTampil);
+
             const nama = localStorage.getItem("username") || "Pengguna";
-            const skor = parseInt(localStorage.getItem("skor")) || 0;
+            const skor = parseInt(nilai) / 5;
 
             let leaderboardData = JSON.parse(localStorage.getItem("leaderboard")) || [];
             leaderboardData.push({ nama, skor });
