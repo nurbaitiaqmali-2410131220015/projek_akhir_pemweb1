@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Nilai dan Waktu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
@@ -200,10 +200,25 @@
             return urlParams.get(name);
         }
 
+
         function formatWaktu(detik) {
             const menit = Math.floor(detik / 60);
             const sisaDetik = detik % 60;
             return `${menit.toString().padStart(2, '0')}:${sisaDetik.toString().padStart(2, '0')}`;
+        }
+
+
+        function waktuStringKeDetik(waktuStr) {
+            if (!waktuStr) return 0;
+            const parts = waktuStr.split(':');
+            if (parts.length === 2) {
+                const menit = parseInt(parts[0]);
+                const detik = parseInt(parts[1]);
+                if (!isNaN(menit) && !isNaN(detik)) {
+                    return menit * 60 + detik;
+                }
+            }
+            return 0;
         }
 
         async function simpanLeaderboard(nama, skor) {
@@ -223,24 +238,37 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            let nilai = parseInt(getQueryParameter('nilai'));
-            let waktu = parseInt(getQueryParameter('waktu'));
-            let waktuTampil = "00:00";
 
-            if (!isNaN(nilai) && !isNaN(waktu)) {
-                waktuTampil = formatWaktu(waktu);
+            let nilaiURL = getQueryParameter('nilai');
+            let waktuURL = getQueryParameter('waktu');
+
+            let nilai = nilaiURL !== null ? parseInt(nilaiURL) : NaN;
+            let waktuDetik;
+
+            if (!isNaN(nilai) && waktuURL !== null) {
+
+                waktuDetik = parseInt(waktuURL);
+                if (isNaN(waktuDetik)) {
+
+                    waktuDetik = waktuStringKeDetik(waktuURL);
+                }
                 console.log("Data dari URL");
             } else {
+
                 const skorLS = parseInt(localStorage.getItem("skor")) || 0;
                 nilai = skorLS * 20;
 
-                const waktuLS = parseInt(localStorage.getItem("waktu"));
-                waktuTampil = isNaN(waktuLS) ? "00:00" : formatWaktu(waktuLS);
+                const waktuLSRaw = localStorage.getItem("waktu") || "00:00";
+                waktuDetik = waktuStringKeDetik(waktuLSRaw);
                 console.log("Data dari localStorage");
             }
 
             nilai = isNaN(nilai) ? 0 : nilai;
+
+            const waktuTampil = formatWaktu(waktuDetik);
+
             const skor = nilai / 5;
+
             const nama = localStorage.getItem("username") || "Pengguna";
 
             document.querySelector('.nilai .score-value').textContent = nilai;
