@@ -255,6 +255,7 @@
                 }
             }
             console.log("Waktu Detik:", waktuDetik);
+            console.log("Waktu Format:", formatWaktu(waktuDetik));
             if (isNaN(waktuDetik)) {
                 const waktuLSRaw = localStorage.getItem("waktu") || "00:00";
                 waktuDetik = waktuStringKeDetik(waktuLSRaw);
