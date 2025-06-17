@@ -244,13 +244,15 @@
 
             let nilai = nilaiURL !== null ? parseInt(nilaiURL) : NaN;
             let waktuDetik;
-
-            if (!isNaN(nilai) && waktuURL !== null) {
-
+            waktuDetik = parseInt(waktuURL);
+            if (isNaN(waktuDetik)) {
                 waktuDetik = waktuStringKeDetik(waktuURL);
+            }
 
-                console.log("Data dari URL");
-            } else {
+            console.log("Nilai URL:", nilaiURL);
+            console.log("Waktu URL:", waktuURL);
+            console.log("Waktu dalam detik:", waktuDetik);
+            if (!isNaN(nilai) && waktuURL !== null) {
 
                 const skorLS = parseInt(localStorage.getItem("skor")) || 0;
                 nilai = skorLS * 20;
