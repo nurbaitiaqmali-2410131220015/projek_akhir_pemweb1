@@ -154,7 +154,6 @@
 </head>
 
 <body>
-
     <div class="navbar">
         <a href="halaman_beranda_fuza.html" class="home-icon"><i class="fas fa-home"></i></a>
         <h1 class="navbar-title">NILAI & WAKTU</h1>
@@ -177,12 +176,11 @@
 
     <a href="halaman_leaderboard_baiti.html" class="lanjut-button">Lanjut</a>
 
-    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
-
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
         import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
         import { getFirestore, collection, query, where, getDocs, updateDoc, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
         const firebaseConfig = {
             apiKey: "API_KEY_HERE",
             authDomain: "PROJECT_ID.firebaseapp.com",
@@ -225,37 +223,28 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            let nilai = getQueryParameter('nilai');
-            let waktu = getQueryParameter('waktu');
-            let waktuTampil;
+            let nilai = parseInt(getQueryParameter('nilai'));
+            let waktu = parseInt(getQueryParameter('waktu'));
+            let waktuTampil = "00:00";
 
-            if (nilai !== null && waktu !== null) {
-                console.log("Menggunakan data dari URL");
+            if (!isNaN(nilai) && !isNaN(waktu)) {
+                waktuTampil = formatWaktu(waktu);
+                console.log("Data dari URL");
             } else {
                 const skorLS = parseInt(localStorage.getItem("skor")) || 0;
                 nilai = skorLS * 20;
 
-                let waktuLS = localStorage.getItem("waktu");
-                waktuLS = parseInt(waktuLS);
+                const waktuLS = parseInt(localStorage.getItem("waktu"));
                 waktuTampil = isNaN(waktuLS) ? "00:00" : formatWaktu(waktuLS);
-                console.log("Menggunakan data dari localStorage");
+                console.log("Data dari localStorage");
             }
 
-            nilai = parseInt(nilai);
             nilai = isNaN(nilai) ? 0 : nilai;
-
-            if (waktu !== null) {
-                waktu = parseInt(waktu);
-                waktuTampil = isNaN(waktu) ? "00:00" : formatWaktu(waktu);
-            }
-
-            if (!waktuTampil) waktuTampil = "00:00";
+            const skor = nilai / 5;
+            const nama = localStorage.getItem("username") || "Pengguna";
 
             document.querySelector('.nilai .score-value').textContent = nilai;
             document.querySelector('.waktu .score-value').textContent = waktuTampil;
-
-            const nama = localStorage.getItem("username") || "Pengguna";
-            const skor = nilai / 5;
 
             let leaderboardData = JSON.parse(localStorage.getItem("leaderboard")) || [];
             leaderboardData.push({ nama, skor });
@@ -269,19 +258,18 @@
                 skor: skor,
                 tanggal: new Date().toISOString()
             }).then(() => {
-                console.log("Data berhasil disimpan ke Firebase Realtime Database");
+                console.log("Data disimpan ke Realtime Database");
             }).catch((error) => {
-                console.error("Gagal menyimpan data ke Firebase Realtime Database:", error);
+                console.error("Gagal simpan ke Realtime Database:", error);
             });
 
             simpanLeaderboard(nama, skor).then(() => {
-                console.log("Data berhasil disimpan ke Firestore leaderboard");
+                console.log("Data disimpan ke Firestore leaderboard");
             }).catch((error) => {
-                console.error("Gagal menyimpan data ke Firestore leaderboard:", error);
+                console.error("Gagal simpan ke Firestore:", error);
             });
         });
     </script>
-
 </body>
 
 </html>
