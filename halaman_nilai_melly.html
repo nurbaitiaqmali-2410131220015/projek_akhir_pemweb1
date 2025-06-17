@@ -180,6 +180,7 @@
     <script type="module">
         import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import { getFirestore, collection, query, where, getDocs, updateDoc, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
         const firebaseConfig = {
             apiKey: "API_KEY_HERE",
@@ -191,9 +192,9 @@
             appId: "APP_ID"
         };
 
-        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
+        const firestore = getFirestore(app);
 
         function getQueryParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -204,6 +205,22 @@
             const menit = Math.floor(detik / 60);
             const sisaDetik = detik % 60;
             return `${menit.toString().padStart(2, '0')}:${sisaDetik.toString().padStart(2, '0')}`;
+        }
+
+        async function simpanLeaderboard(nama, skor) {
+            const leaderboardRef = collection(firestore, "leaderboard");
+            const q = query(leaderboardRef, where("nama", "==", nama));
+            const snapshot = await getDocs(q);
+
+            if (!snapshot.empty) {
+                snapshot.forEach(async (docu) => {
+                    if (skor > docu.data().skor) {
+                        await updateDoc(docu.ref, { skor });
+                    }
+                });
+            } else {
+                await addDoc(leaderboardRef, { nama, skor });
+            }
         }
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -222,7 +239,6 @@
                 waktuTampil = isNaN(waktuLS) ? "00:00" : formatWaktu(waktuLS);
                 console.log("Menggunakan data dari localStorage");
             }
-
 
             nilai = parseInt(nilai);
             nilai = isNaN(nilai) ? 0 : nilai;
@@ -252,9 +268,15 @@
                 skor: skor,
                 tanggal: new Date().toISOString()
             }).then(() => {
-                console.log("Data berhasil disimpan ke Firebase");
+                console.log("Data berhasil disimpan ke Firebase Realtime Database");
             }).catch((error) => {
-                console.error("Gagal menyimpan data ke Firebase:", error);
+                console.error("Gagal menyimpan data ke Firebase Realtime Database:", error);
+            });
+
+            simpanLeaderboard(nama, skor).then(() => {
+                console.log("Data berhasil disimpan ke Firestore leaderboard");
+            }).catch((error) => {
+                console.error("Gagal menyimpan data ke Firestore leaderboard:", error);
             });
         });
     </script>
