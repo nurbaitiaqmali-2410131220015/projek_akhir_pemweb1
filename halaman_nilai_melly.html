@@ -238,22 +238,16 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-
             let nilaiURL = getQueryParameter('nilai');
             let waktuURL = getQueryParameter('waktu');
 
             let nilai = nilaiURL !== null ? parseInt(nilaiURL) : NaN;
-            let waktuDetik;
-            waktuDetik = parseInt(waktuURL);
+            let waktuDetik = parseInt(waktuURL);
             if (isNaN(waktuDetik)) {
                 waktuDetik = waktuStringKeDetik(waktuURL);
             }
 
-            console.log("Nilai URL:", nilaiURL);
-            console.log("Waktu URL:", waktuURL);
-            console.log("Waktu dalam detik:", waktuDetik);
-            if (!isNaN(nilai) && waktuURL !== null) {
-
+            if (isNaN(nilai)) {
                 const skorLS = parseInt(localStorage.getItem("skor")) || 0;
                 nilai = skorLS * 20;
 
@@ -273,29 +267,10 @@
             document.querySelector('.nilai .score-value').textContent = nilai;
             document.querySelector('.waktu .score-value').textContent = waktuTampil;
 
-            let leaderboardData = JSON.parse(localStorage.getItem("leaderboard")) || [];
-            leaderboardData.push({ nama, skor });
-            leaderboardData.sort((a, b) => b.skor - a.skor);
-            localStorage.setItem("leaderboard", JSON.stringify(leaderboardData));
 
-            push(ref(db, "users/" + nama), {
-                username: nama,
-                nilai: nilai,
-                waktu: waktuTampil,
-                skor: skor,
-                tanggal: new Date().toISOString()
-            }).then(() => {
-                console.log("Data disimpan ke Realtime Database");
-            }).catch((error) => {
-                console.error("Gagal simpan ke Realtime Database:", error);
-            });
-
-            simpanLeaderboard(nama, skor).then(() => {
-                console.log("Data disimpan ke Firestore leaderboard");
-            }).catch((error) => {
-                console.error("Gagal simpan ke Firestore:", error);
-            });
         });
+
+
     </script>
 </body>
 
