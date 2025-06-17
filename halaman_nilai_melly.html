@@ -241,6 +241,9 @@
             let nilaiURL = getQueryParameter('nilai');
             let waktuURL = getQueryParameter('waktu');
 
+            console.log("Nilai URL:", nilaiURL);
+            console.log("Waktu URL:", waktuURL);
+
             let nilai = nilaiURL !== null ? parseInt(nilaiURL) : 0;
             let waktuDetik = 0;
 
@@ -251,7 +254,7 @@
                     waktuDetik = parseInt(waktuURL);
                 }
             }
-
+            console.log("Waktu Detik:", waktuDetik);
             if (isNaN(waktuDetik)) {
                 const waktuLSRaw = localStorage.getItem("waktu") || "00:00";
                 waktuDetik = waktuStringKeDetik(waktuLSRaw);
